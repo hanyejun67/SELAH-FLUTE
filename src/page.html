@@ -146,7 +146,10 @@ picture { display: contents; }
 .hero h1 { font-size: clamp(42px, 11.6vw, 84px); font-weight: 300; line-height: var(--lh-display); letter-spacing: var(--ls-display); }
 .hero h1 span { display: block; }
 .hero-sub { text-wrap: balance; font-family: var(--f-head); font-size: clamp(19px, 4.6vw, 26px); font-weight: 300; line-height: var(--lh-cap); color: var(--text); letter-spacing: var(--ls-sub); }
-.hero-sub b { font-weight: 600; color: var(--gold-hi); }
+.hero-sub b { display: block; font-weight: 600; color: var(--gold-hi); }
+/* the model name is the line people should remember: its own row, heavier, in the page's gold, with engraved-style numerals */
+.sub-hi { display: block; margin: 4px 0; font-size: 1.32em; font-weight: 600; line-height: var(--lh-head); letter-spacing: var(--ls-head); }
+.sub-k { font-family: var(--f-num); font-weight: 500; font-size: 1.22em; letter-spacing: 0.01em; font-variant-numeric: lining-nums; }
 .chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .chips li { border: 1px solid var(--line-gold); color: var(--gold-hi); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 400; line-height: var(--lh-cap); }
 /* The open case: lid and base halves, the same pieces the intro opens, so it lands here without a cut */
@@ -581,7 +584,7 @@ html.intro-on, html.intro-on body { overflow: hidden; }
     <div class="hero-text">
       <p class="invite"><span class="caps">By Invitation<i class="sep"> · </i>Muramatsu 14K + 9K</span></p>
       <h1><span class="shine">국내 단 한 대.</span><span class="shine">주인도 단 하나.</span></h1>
-      <p class="hero-sub">5년을 기다린 풀옵션 무라마츠 올골드 14K, 9K<br><b>12월 5일에 도착합니다.</b></p>
+      <p class="hero-sub">5년을 기다린 풀옵션 <span class="sub-hi metal">무라마츠 올골드 <span class="sub-k">14K, 9K</span></span><b>12월 5일에 도착합니다.</b></p>
       <ul class="chips" aria-label="핵심 사양">
         <li>14K 관체</li><li>9K 금 키</li><li>전체 수공 각인</li><li>츠바사 립</li>
       </ul>
