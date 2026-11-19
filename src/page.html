@@ -1,0 +1,1471 @@
+<title>무라마츠 14K+9K 풀각인</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>
+(function () {
+  try {
+    document.documentElement.className += " js";
+    var seen = false;
+    try { seen = sessionStorage.getItem("selah-intro") === "1"; } catch (e) {}
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!seen && !calm && !/[?&]nointro/.test(location.search)) document.documentElement.className += " intro-on";
+  } catch (e) {}
+})();
+</script>
+<style>
+/*@FONTFACES@*/
+/* Layout: a wine-black studio taken from the case's burgundy velvet; every word is lit in gold.
+   Story order follows a luxury launch: invitation, scarcity, proof by photo, provenance, sound, spec, ownership, safety, one call.
+   Type: MaruBuri for Korean headlines, Pretendard for reading, Cormorant Garamond for numerals, Cinzel for engraved-style English labels. */
+:root {
+  --bg: #0E0508;
+  --panel: #170A0E;
+  --hair: #3A2620;
+  --gold-hi: #F4E0AE;
+  --gold: #D6AC68;
+  --gold-deep: #9C7840;
+  --text: #E4CFA2;
+  --mist: #A38E66;
+  --on-gold: #160E03;
+  --bar: rgba(14, 5, 8, 0.9);
+  /* metal: one gold gradient (176deg), one moving highlight (104deg), one strong line, one shadow, one glow */
+  --metal: linear-gradient(176deg, #F7E6B8 0%, #E2BE7C 38%, #C4974F 70%, #E9CD92 100%);
+  --sheen: linear-gradient(104deg, rgba(255, 246, 221, 0) 42%, rgba(255, 246, 221, 0.6) 50%, rgba(255, 246, 221, 0) 58%);
+  --line-gold: rgba(214, 172, 104, 0.5);
+  --shadow: 0 32px 64px -24px rgba(6, 1, 3, 0.9);
+  --glow: 0 0 16px rgba(214, 172, 104, 0.3);
+  --f-head: "MaruBuri", "Noto Serif KR", "AppleMyungjo", serif;
+  --f-body: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --f-num: "Cormorant Garamond", "Didot", Georgia, serif;
+  --f-caps: "Cinzel", "Trajan Pro", "Pretendard", Georgia, serif;
+  /* type scale: one tracking and one leading per tier */
+  --ls-display: -0.04em; --ls-head: -0.03em; --ls-sub: -0.02em; --ls-caps: 0.24em;
+  /* one radius for photos, one for cards and buttons */
+  --r-photo: 4px; --r-card: 8px;
+  /* motion: two curves, three durations */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --t1: 0.12s; --t2: 0.32s; --t3: 0.64s;
+  /* 8pt spacing; --bar-h is the sticky call bar without the safe area */
+  --gutter: 16px; --pad-card: 24px; --bar-h: 64px;
+  --lh-display: 1.2; --lh-head: 1.35; --lh-body: 1.7; --lh-cap: 1.5;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: var(--lh-body);
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  padding-bottom: calc(var(--bar-h) + 32px + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 760px) { :root { --pad-card: 32px; } }
+body.lb-open { overflow: hidden; }
+.fonts-wait .wrap, .fonts-wait .bar { visibility: hidden; }
+html { scrollbar-color: var(--gold-deep) var(--bg); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 4px; border: 2px solid var(--bg); }
+::selection { background: rgba(214, 172, 104, 0.32); color: var(--gold-hi); }
+/* middle dots: one optical gap wherever they separate phrases, a tighter one inside compound words */
+.sep, .mid { display: inline-block; text-align: center; font-style: normal; letter-spacing: 0; }
+.sep { width: 1em; }
+.mid { width: 0.5em; }
+/* tracked capitals need a wider gap; the negative margin cancels the tracking left behind by the previous letter */
+.caps .sep { width: 1.8em; margin-left: calc(-1 * var(--ls-caps)); }
+.ic-kicker .sep, .ic-sub .sep { width: 1.8em; margin-left: -0.28em; }
+
+.wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 120px; }
+
+a { color: inherit; }
+a, button, [role="button"], .shot img { -webkit-tap-highlight-color: transparent; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+p, ul, ol, dl, figure, blockquote { margin: 0; }
+h1, h2, h3 { margin: 0; font-family: var(--f-head); text-wrap: balance; color: var(--gold-hi); letter-spacing: var(--ls-sub); line-height: var(--lh-head); }
+h2 { font-size: clamp(26px, 5.6vw, 40px); font-weight: 300; letter-spacing: var(--ls-head); }
+h3 { font-size: 19px; font-weight: 600; }
+p, dd, li span, .what span { text-wrap: pretty; }
+.nb { white-space: nowrap; }
+.metal {
+  background: var(--metal);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--gold);
+}
+.num { font-family: var(--f-num); font-weight: 500; font-variant-numeric: lining-nums tabular-nums; letter-spacing: 0; }
+.caps { font-family: var(--f-caps); font-size: 11px; line-height: var(--lh-cap); letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--gold); font-weight: 500; }
+.muted { color: var(--mist); }
+.center { text-align: center; }
+
+/* Gold sheen that keeps moving across key lines; the text is always fully visible */
+.shine {
+  background-image: var(--sheen), var(--metal);
+  background-size: 300% 100%, 100% 100%; background-position: 130% 0, 0 0; background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--gold);
+  animation: sheen 12s var(--ease-io) infinite;
+}
+@keyframes sheen { 0%, 40% { background-position: 130% 0, 0 0; } 100% { background-position: -30% 0, 0 0; } }
+
+/* Photos: black on black, edges dissolved into the page, tap to enlarge */
+picture { display: contents; }
+.shot { position: relative; overflow: hidden; background: var(--panel); border-radius: var(--r-photo); }
+.shot img { display: block; width: 100%; height: auto; max-width: 100%; cursor: zoom-in; }
+.shot::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 32px 4px rgba(14, 5, 8, 0.6); }
+/* photos fade in once decoded instead of popping */
+.js .shot img, .js .duo-img img, .js .case-shot { opacity: 0; transition: opacity var(--t3) var(--ease-out), box-shadow var(--t3) var(--ease-out); }
+.js .shot img.is-in, .js .duo-img img.is-in, .js .case-shot.is-in { opacity: 1; }
+.tag {
+  position: absolute; left: 8px; top: 8px; z-index: 1;
+  font-size: 12px; line-height: var(--lh-cap); color: var(--gold-hi);
+  background: rgba(14, 5, 8, 0.7); border: 1px solid var(--hair);
+  border-radius: 999px; padding: 2px 8px; pointer-events: none;
+}
+.zoom-hint {
+  position: absolute; right: 8px; top: 8px; z-index: 1; pointer-events: none;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(14, 5, 8, 0.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23F4E0AE' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.25'/%3E%3Cpath d='M10.2 10.2L13.5 13.5'/%3E%3C/svg%3E") center / 16px no-repeat; border: 1px solid var(--hair);
+}
+
+/* Hero */
+.hero { display: grid; gap: 40px; padding-top: 24px; position: relative; }
+.hero::before {
+  content: ""; position: absolute; inset: -40px 0 auto; height: 560px; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(150, 26, 56, 0.3), rgba(150, 26, 56, 0) 70%);
+}
+@media (min-width: 840px) { .hero { padding-top: 56px; gap: 48px; } }
+.hero-text { display: grid; gap: 24px; }
+.invite { display: inline-flex; align-items: center; gap: 8px; justify-self: start; border: 1px solid var(--line-gold); border-radius: 999px; padding: 8px 16px 8px 12px; }
+.invite::before { content: ""; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); box-shadow: var(--glow); }
+.invite .caps { font-size: clamp(9px, 2.7vw, 11px); white-space: nowrap; }
+.hero h1 { font-size: clamp(42px, 11.6vw, 84px); font-weight: 300; line-height: var(--lh-display); letter-spacing: var(--ls-display); }
+.hero h1 span { display: block; }
+.hero-sub { text-wrap: balance; font-family: var(--f-head); font-size: clamp(19px, 4.6vw, 26px); font-weight: 300; line-height: var(--lh-cap); color: var(--text); letter-spacing: var(--ls-sub); }
+.hero-sub b { font-weight: 600; color: var(--gold-hi); }
+.chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { border: 1px solid var(--line-gold); color: var(--gold-hi); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 400; line-height: var(--lh-cap); }
+/* The open case: lid and base halves, the same pieces the intro opens, so it lands here without a cut */
+.hero-shot { display: grid; gap: 16px; }
+.case-shot.landing { box-shadow: none; }
+.case-shot .zoom-hint { transition: opacity var(--t3) var(--ease-out); }
+.case-shot.landing .zoom-hint { opacity: 0; }
+.case-shot {
+  position: relative; display: grid; overflow: hidden; cursor: zoom-in;
+  border-radius: 1.2% / 2.4%;
+  box-shadow: var(--shadow), 0 0 0 1px var(--hair);
+}
+.case-shot img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 1; }
+.case-shot .cs-base { position: relative; overflow: hidden; }
+.case-shot .cs-base::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(104deg, rgba(255, 236, 196, 0) 38%, rgba(255, 238, 200, 0.14) 48%, rgba(255, 248, 226, 0.22) 50%, rgba(255, 238, 200, 0.14) 52%, rgba(255, 236, 196, 0) 62%);
+  background-size: 320% 100%; background-position: 130% 0;
+  animation: caseglint 12s var(--ease-io) 1.2s infinite;
+}
+@keyframes caseglint { 0%, 45% { background-position: 130% 0; } 80%, 100% { background-position: -30% 0; } }
+.hero-cap { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; line-height: var(--lh-cap); color: var(--mist); }
+.hero-cap b { color: var(--gold-hi); font-weight: 600; }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.025); } }
+/* close-ups move slowly, like a camera pushing in on a real shoot */
+.detail .shot img, .feature .shot img { animation: drift 24s var(--ease-io) infinite alternate; }
+.detail:nth-child(1) .shot img { transform-origin: 30% 60%; }
+.detail:nth-child(2) .shot img { transform-origin: 70% 40%; animation-delay: -5s; }
+.detail:nth-child(3) .shot img { transform-origin: 40% 70%; animation-delay: -9s; }
+.feature .shot img { transform-origin: 50% 60%; }
+
+.cta { display: grid; gap: 16px; padding-top: 8px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 56px; padding: 0 24px; border-radius: var(--r-card);
+  font: 600 16px/1.2 var(--f-body); letter-spacing: -0.01em; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--line-gold);
+  touch-action: manipulation; -webkit-user-select: none; user-select: none;
+  transition: transform var(--t1) var(--ease-out), filter var(--t2) var(--ease-out), background-color var(--t2) var(--ease-out);
+}
+.btn-gold { background: var(--metal); color: var(--on-gold); border-color: transparent; background-origin: border-box; box-shadow: var(--glow); }
+.btn-line { background: transparent; color: var(--gold-hi); }
+@media (hover: hover) {
+  .btn-gold:hover { filter: brightness(1.06); }
+  .btn-line:hover, .lb-close:hover, .ic-skip:hover { background-color: rgba(214, 172, 104, 0.1); }
+}
+.btn:active, .lb-close:active, .ic-skip:active { transform: scale(0.98); }
+.btn-gold:active { filter: brightness(0.95); }
+.btn-line:active { background-color: rgba(214, 172, 104, 0.14); }
+/* copy button: the confirmation is laid over the label, so the button never changes width */
+.cp { position: relative; display: inline-flex; }
+.cp > span { display: inline-flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; transition: opacity var(--t2) var(--ease-out), transform var(--t2) var(--ease-out); }
+.cp-b { position: absolute; left: 50%; top: 0; bottom: 0; margin-left: -4em; width: 8em; opacity: 0; transform: translateY(4px); }
+.cp-b::before {
+  content: ""; width: 16px; height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.4l3 3 6-6.4' fill='none' stroke='%23F4E0AE' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.done .cp-a { opacity: 0; transform: translateY(-4px); }
+.done .cp-b { opacity: 1; transform: none; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.reassure { font-size: 13px; line-height: var(--lh-cap); color: var(--mist); }
+
+/* Countdown */
+.countdown { display: grid; gap: 16px; justify-items: center; text-align: center; padding-block: 8px; }
+.cd { display: grid; grid-template-columns: repeat(4, minmax(0, 76px)); gap: 8px; }
+.cd div { display: grid; gap: 4px; border: 1px solid var(--hair); border-radius: var(--r-card); padding: 16px 4px 12px; background: var(--panel); }
+.cd b { font-family: var(--f-num); font-weight: 500; font-size: clamp(30px, 8vw, 40px); line-height: 1; color: var(--gold-hi); font-variant-numeric: lining-nums tabular-nums; }
+.cd small { font-size: 12px; line-height: var(--lh-cap); color: var(--mist); }
+.cd-note { font-size: 13px; line-height: var(--lh-cap); color: var(--mist); }
+
+/* Fact strip */
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+@media (min-width: 720px) { .facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.fact { display: grid; gap: 4px; padding: 24px 8px; text-align: center; align-content: start; }
+.fact + .fact { border-left: 1px solid var(--hair); }
+@media (max-width: 719px) { .fact:nth-child(3) { border-left: 0; } .fact:nth-child(n+3) { border-top: 1px solid var(--hair); } }
+.fact .num { font-size: 42px; line-height: 1.05; font-weight: 500; }
+.fact .lab { font-size: 13px; line-height: var(--lh-cap); color: var(--mist); }
+
+/* Sections */
+section { display: grid; gap: 32px; }
+.head { display: grid; gap: 16px; max-width: 40em; }
+
+/* Manifesto */
+.manifesto { justify-items: center; text-align: center; gap: 24px; padding-block: 16px; }
+.manifesto h2 { font-size: clamp(26px, 7.8vw, 56px); line-height: var(--lh-head); letter-spacing: var(--ls-display); }
+.manifesto h2 span { display: block; }
+.manifesto h2 .soft { color: var(--mist); -webkit-text-fill-color: currentColor; background: none; }
+.manifesto p { max-width: 30em; color: var(--mist); }
+.rule { width: 64px; height: 1px; background: var(--line-gold); }
+
+.details { display: grid; gap: 40px; }
+@media (min-width: 760px) { .details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+.detail { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.detail .shot { margin-bottom: 8px; }
+.detail .shot img { aspect-ratio: 4 / 3; object-fit: cover; }
+.detail p.muted { font-size: 15px; }
+
+.feature { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 760px) { .feature { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 48px; } }
+.feature .copy { display: grid; gap: 16px; }
+
+/* Journey timeline */
+.journey ol { list-style: none; padding: 0; position: relative; display: grid; }
+.journey ol::before {
+  content: ""; position: absolute; left: 111px; top: 10px; bottom: 24px; width: 1px;
+  background: linear-gradient(var(--gold-deep), var(--gold)); transform-origin: top;
+}
+.journey li { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 0 32px; padding-bottom: 32px; }
+.journey li::after {
+  content: ""; position: absolute; left: 107px; top: 6px; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 0 4px var(--bg), var(--glow);
+}
+.journey li.last::after { width: 15px; height: 15px; left: 104px; top: 3px; background: var(--gold-hi); box-shadow: 0 0 0 4px var(--bg), var(--glow), var(--glow); }
+.journey .when { font-family: var(--f-caps); font-weight: 500; font-size: 11px; letter-spacing: 0.14em; color: var(--gold); text-align: right; padding-top: 2px; line-height: var(--lh-cap); }
+.journey .what { display: grid; gap: 4px; }
+.journey .what b { font-family: var(--f-head); font-weight: 600; font-size: 19px; line-height: var(--lh-head); color: var(--gold-hi); letter-spacing: var(--ls-sub); }
+.journey .what span { color: var(--mist); font-size: 15px; }
+@media (max-width: 420px) {
+  .journey li { grid-template-columns: 78px minmax(0, 1fr); gap: 0 26px; }
+  .journey ol::before { left: 90px; }
+  .journey li::after { left: 86px; }
+  .journey li.last::after { left: 83px; }
+  .journey .when { font-size: 10px; letter-spacing: 0.08em; }
+}
+
+/* Sound */
+.sound { justify-items: center; text-align: center; gap: 24px; }
+.sound blockquote { position: relative; max-width: 34em; padding-top: 40px; }
+.sound blockquote::before {
+  content: "\201C"; position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+  font-family: var(--f-num); font-weight: 500; font-size: 110px; line-height: 1; color: var(--gold-deep);
+}
+.sound blockquote p { font-family: var(--f-head); font-weight: 300; font-size: clamp(21px, 5vw, 30px); line-height: var(--lh-cap); color: var(--gold-hi); letter-spacing: var(--ls-head); }
+.sound .src { font-size: 13px; line-height: var(--lh-body); color: var(--mist); max-width: 32em; }
+
+/* SS grade spec */
+.grade { gap: 40px; }
+.grade-head { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 760px) { .grade-head { grid-template-columns: auto minmax(0, 1fr); gap: 48px; } }
+.badge-ss {
+  position: relative; overflow: hidden;
+  width: 168px; aspect-ratio: 1; border-radius: 50%;
+  display: grid; place-content: center; justify-items: center; gap: 4px; text-align: center;
+  border: 1px solid var(--line-gold);
+  background: radial-gradient(circle at 50% 30%, rgba(214, 172, 104, 0.22), rgba(214, 172, 104, 0.02) 70%), var(--panel);
+  box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--line-gold), var(--glow), 0 0 64px rgba(214, 172, 104, 0.16);
+}
+.badge-ss .num { font-size: 76px; line-height: 0.9; font-weight: 500; }
+.badge-ss small { font-size: 12px; line-height: var(--lh-cap); color: var(--mist); }
+.badge-ss::after {
+  content: ""; position: absolute; inset: -20%; pointer-events: none;
+  background: linear-gradient(104deg, transparent 40%, rgba(255, 244, 214, 0.18) 50%, transparent 60%);
+  animation: glint 9s var(--ease-io) infinite;
+}
+@keyframes glint { 0%, 55% { transform: translateX(-70%); } 85%, 100% { transform: translateX(70%); } }
+
+.map { display: grid; gap: 8px; }
+.map svg { display: block; width: 100%; height: auto; overflow: visible; }
+.map-labels { position: relative; height: 24px; }
+.map-labels span {
+  position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap;
+  font-size: 13px; line-height: var(--lh-cap); font-weight: 600; color: var(--gold-hi);
+}
+.sweep { animation: sweep 8s var(--ease-io) infinite; }
+@keyframes sweep { 0% { transform: translateX(0); } 70%, 100% { transform: translateX(1300px); } }
+.ring { transform-box: fill-box; transform-origin: center; animation: ring 3.6s var(--ease-out) infinite; }
+.ring.r2 { animation-delay: 1.2s; } .ring.r3 { animation-delay: 2.4s; }
+@keyframes ring { 0% { transform: scale(0.6); opacity: 0.6; } 100% { transform: scale(2.4); opacity: 0; } }
+
+.zones { display: grid; gap: 16px; }
+@media (min-width: 820px) { .zones { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 0.9fr); } }
+.zone { border: 1px solid var(--hair); border-radius: var(--r-card); padding: var(--pad-card); background: var(--panel); display: grid; gap: 16px; align-content: start; }
+.zone-top { display: flex; align-items: center; gap: 16px; }
+.zone-no { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--metal); color: var(--on-gold); font-weight: 600; font-size: 14px; flex-shrink: 0; }
+.checks { list-style: none; padding: 0; display: grid; gap: 16px; }
+.checks li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; align-items: start; }
+.checks li::before {
+  content: ""; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%;
+  background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4l2.6 2.6L12 5.4' fill='none' stroke='%23160E03' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+  box-shadow: var(--glow);
+}
+.checks b { display: block; font-weight: 600; color: var(--gold-hi); line-height: var(--lh-cap); }
+.checks span { display: block; font-size: 14px; color: var(--mist); line-height: var(--lh-cap); }
+
+.gauge { display: grid; gap: 16px; }
+.gauge-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; color: var(--mist); }
+.gauge-top b { font-weight: 600; color: var(--gold-hi); font-size: 16px; letter-spacing: 0.02em; }
+.gauge-bar { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
+.gauge-bar i { height: 8px; border-radius: 2px; background: var(--metal); box-shadow: var(--glow); }
+
+.spec-mini { display: grid; grid-template-columns: minmax(5.5em, 30%) minmax(0, 1fr); border-top: 1px solid var(--hair); }
+.spec-mini dt, .spec-mini dd { margin: 0; padding: 16px 0; border-bottom: 1px solid var(--hair); line-height: var(--lh-cap); }
+.spec-mini dt { color: var(--mist); font-size: 14px; padding-right: 16px; }
+.spec-mini dd { font-weight: 400; color: var(--gold-hi); }
+
+/* Ownership */
+.owner-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .owner-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.owner-card { border: 1px solid var(--line-gold); border-radius: var(--r-card); padding: var(--pad-card); display: grid; gap: 16px; align-content: start;
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(214, 172, 104, 0.1), rgba(214, 172, 104, 0) 70%), var(--panel); }
+.owner-card .num { font-size: 34px; line-height: 1; font-weight: 500; }
+.owner-card p.muted { font-size: 15px; }
+
+.fit { list-style: none; padding: 0; display: grid; border-top: 1px solid var(--hair); }
+@media (min-width: 720px) { .fit { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } }
+.fit li { padding: 24px 0; border-bottom: 1px solid var(--hair); display: grid; gap: 8px; }
+.fit strong { font-family: var(--f-head); font-weight: 600; font-size: 19px; line-height: var(--lh-head); color: var(--gold-hi); letter-spacing: var(--ls-sub); }
+.fit span { color: var(--mist); font-size: 15px; }
+
+.ease { display: grid; gap: 16px; }
+@media (min-width: 760px) { .ease { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); } }
+.panel { background: var(--panel); border: 1px solid var(--hair); border-radius: var(--r-card); padding: var(--pad-card); display: grid; gap: 16px; align-content: start; }
+.panel.safe { border-color: var(--line-gold); }
+.promise { list-style: none; padding: 0; display: grid; gap: 16px; counter-reset: p; }
+.promise li { counter-increment: p; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 16px; font-size: 15px; align-items: start; }
+.promise li::before {
+  content: counter(p); width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center; border: 1px solid var(--line-gold); color: var(--gold-hi);
+  font-size: 12px; font-weight: 600;
+}
+.promise b { display: block; color: var(--gold-hi); font-weight: 600; line-height: var(--lh-cap); }
+.promise span { display: block; color: var(--mist); font-size: 14px; line-height: var(--lh-cap); }
+
+.steps { list-style: none; padding: 0; display: grid; counter-reset: step; border-top: 1px solid var(--hair); }
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; } }
+.steps li { counter-increment: step; display: grid; gap: 8px; align-content: start; padding: 24px 0; border-bottom: 1px solid var(--hair); }
+.steps li::before { content: counter(step); font-family: var(--f-num); font-size: 40px; font-weight: 500; line-height: 1; color: var(--gold); }
+.steps strong { font-weight: 600; color: var(--gold-hi); line-height: var(--lh-cap); }
+.steps span { color: var(--mist); font-size: 15px; }
+
+/* Heritage */
+.heritage-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .heritage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+.house { border-top: 1px solid var(--line-gold); padding-top: 24px; display: grid; gap: 8px; align-content: start; }
+.house .num { font-size: clamp(60px, 14vw, 96px); line-height: 0.95; font-weight: 500; }
+.house p.muted { font-size: 15px; }
+
+.faq { display: grid; border-top: 1px solid var(--hair); }
+.faq div { padding: 24px 0; border-bottom: 1px solid var(--hair); display: grid; gap: 8px; }
+.faq dt { font-family: var(--f-head); font-weight: 600; font-size: 19px; line-height: var(--lh-head); color: var(--gold-hi); letter-spacing: var(--ls-sub); }
+.faq dd { margin: 0; color: var(--mist); font-size: 15px; }
+
+.close {
+  background: var(--panel); border: 1px solid var(--line-gold); border-radius: var(--r-card);
+  padding: 48px var(--pad-card); display: grid; gap: 24px; position: relative; overflow: hidden;
+}
+.close::before {
+  content: ""; position: absolute; inset: -40% -20% auto; height: 320px; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(214, 172, 104, 0.16), rgba(214, 172, 104, 0) 70%);
+}
+.close > * { position: relative; }
+.close h2 { font-size: clamp(22px, 6.6vw, 46px); }
+.close .cd { justify-self: start; }
+.phone { font-family: var(--f-num); font-weight: 500; font-size: clamp(36px, 9.4vw, 54px); line-height: 1.05; letter-spacing: 0; font-variant-numeric: lining-nums tabular-nums; user-select: all; }
+
+footer { border-top: 1px solid var(--hair); padding-top: 24px; display: grid; gap: 8px; font-size: 13px; color: var(--mist); line-height: var(--lh-body); }
+footer strong { color: var(--gold-hi); font-weight: 600; }
+
+/* Sticky call bar */
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: var(--bar);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--hair);
+  padding-top: 8px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+.bar-inner { max-width: 980px; margin: 0 auto; min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.bar-text { display: grid; line-height: var(--lh-head); min-width: 0; }
+.bar-text small { font-size: 12px; color: var(--mist); font-variant-numeric: tabular-nums; }
+.bar-text span { font-family: var(--f-num); font-weight: 500; font-size: 24px; line-height: 1.1; color: var(--gold-hi); font-variant-numeric: lining-nums tabular-nums; user-select: all; }
+.bar .btn { min-height: 48px; padding: 0 24px; flex-shrink: 0; }
+
+/* Lightbox */
+.lb {
+  position: fixed; inset: 0; z-index: 50; background: rgba(10, 3, 6, 0.97);
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px;
+  padding: calc(16px + env(safe-area-inset-top, 0px)) max(var(--gutter), env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(var(--gutter), env(safe-area-inset-left, 0px));
+}
+.lb { opacity: 0; visibility: hidden; transition: opacity var(--t2) var(--ease-out), visibility 0s linear var(--t2); }
+.lb.open { opacity: 1; visibility: visible; transition-delay: 0s; }
+.lb[hidden] { display: none; }
+.lb-close { justify-self: end; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-gold); background: transparent; color: var(--gold-hi); font: 600 14px/1 var(--f-body); cursor: pointer; touch-action: manipulation; transition: transform var(--t1) var(--ease-out), background-color var(--t2) var(--ease-out); }
+.lb img { width: 100%; height: 100%; object-fit: contain; min-height: 0; opacity: 0; transform: scale(0.97); transition: opacity var(--t2) var(--ease-out), transform var(--t2) var(--ease-out); }
+.lb.open img.ready { opacity: 1; transform: none; }
+.lb p { text-align: center; font-size: 12px; line-height: var(--lh-cap); color: var(--mist); }
+
+/* Lighting replay: resting state is fully lit; when a section comes into view, it lights up again */
+.play .checks li::before { animation: lightup var(--t3) var(--ease-out) both; animation-delay: calc(var(--i) * 0.08s); }
+.play .checks li b { animation: textup var(--t3) var(--ease-out) both; animation-delay: calc(var(--i) * 0.08s); }
+.play .gauge-bar i { animation: lightup var(--t3) var(--ease-out) both; animation-delay: calc(var(--i) * 0.08s); }
+.play.journey ol::before { animation: drawline 1.6s var(--ease-io) both; }
+.play.journey li::after { animation: lightup var(--t3) var(--ease-out) both; animation-delay: calc(var(--i) * 0.3s); }
+@keyframes lightup { from { opacity: 0.45; box-shadow: none; } to { opacity: 1; } }
+@keyframes textup { from { color: var(--mist); } to { color: var(--gold-hi); } }
+@keyframes drawline { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* Sections arrive once, barely: a short fade and an 8px rise */
+.js .rv { opacity: 0; transform: translateY(8px); transition: opacity var(--t3) var(--ease-out), transform var(--t3) var(--ease-out); }
+.js .rv.in { opacity: 1; transform: none; }
+
+
+/* Intro: burgundy smoke, the closed case, two latches slide apart, the lid opens on the real photo, then it lands as the hero */
+.intro { display: none; }
+html.intro-on, html.intro-on body { overflow: hidden; }
+.intro-on .intro { display: block; position: fixed; inset: 0; z-index: 100; overflow: hidden; color: var(--gold-hi); }
+.intro-on .wrap, .intro-on .bar { opacity: 0; }
+.intro-on .case-shot { visibility: hidden; }
+/* the backdrop is its own layer, so it can dissolve and let the page show through as the case lands */
+.ic-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 62% at 50% 50%, #3A0918 0%, #24050F 38%, #12030A 70%, #0E0508 100%); }
+.ic-smoke { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; pointer-events: none; }
+.ic-glow {
+  position: absolute; left: 50%; top: 50%; width: 130vmax; height: 130vmax; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(240, 186, 120, 0.3) 0%, rgba(150, 40, 62, 0.12) 24%, rgba(0, 0, 0, 0) 52%);
+  opacity: 0; pointer-events: none;
+}
+.ic-view { position: absolute; inset: 0; opacity: 0; perspective-origin: 50% 50%; }
+.ic-cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; transform-style: preserve-3d; will-change: transform; }
+.ic-cam div, .ic-cam img { position: absolute; left: 0; top: 0; display: block; }
+.ic-3d { transform-style: preserve-3d; }
+.ic-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden; }
+.ic-face img { width: 100%; height: 100%; }
+/* leather: the real case's grain (fine, seamless) over its plum-brown, lit from above */
+.ic-top, .ic-wall-lid, .ic-wall-base { background-color: #482A2F; background-repeat: no-repeat, repeat, no-repeat; background-blend-mode: normal, soft-light, normal; }
+.ic-top {
+  background-image:
+    radial-gradient(64% 120% at 50% 20%, rgba(255, 228, 214, 0.16), rgba(255, 228, 214, 0) 62%),
+    url("img/grain.png"),
+    linear-gradient(180deg, #57343A 0%, #4A2B30 45%, #351D22 100%);
+  background-size: 100% 100%, var(--tile) auto, 100% 100%;
+}
+.ic-stitch { position: absolute; border-style: dashed; border-color: rgba(20, 6, 9, 0.7); box-shadow: 0 1px 0 rgba(255, 226, 214, 0.1), inset 0 1px 0 rgba(255, 226, 214, 0.07); }
+.ic-wall-lid {
+  background-image: linear-gradient(180deg, rgba(255, 232, 222, 0.2), rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0.32)), url("img/grain.png"), linear-gradient(#4A2B30, #3A2126);
+  background-size: 100% 100%, var(--tile) auto, 100% 100%;
+}
+.ic-wall-base {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.1) 14%, rgba(0, 0, 0, 0.42)), url("img/grain.png"), linear-gradient(#45282D, #321C21);
+  background-size: 100% 100%, var(--tile) auto, 100% 100%;
+}
+.ic-gold { background: linear-gradient(176deg, #FFF4CC 0%, #F2CF78 26%, #C2913A 58%, #8E6322 80%, #E9C672 100%); }
+.ic-screw { border-radius: 50%; background: radial-gradient(circle at 38% 34%, #FFF6D4 0%, #E4BB62 40%, #8A5E1E 78%, #5E3E12 100%); box-shadow: 0 0 0 1px rgba(90, 60, 16, 0.5); }
+.ic-slider { border-radius: 18%; background: linear-gradient(176deg, #FFF6D2 0%, #F4D27C 30%, #C08E36 66%, #F0D184 100%); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(120, 82, 24, 0.45); }
+.ic-slider::after { content: ""; position: absolute; inset: 24% 30%; border-radius: 50%; border: 1px solid rgba(110, 74, 20, 0.6); }
+.ic-glint { border-radius: 50%; background: radial-gradient(circle, rgba(255, 252, 236, 0.95) 0%, rgba(255, 226, 150, 0.5) 22%, rgba(255, 210, 120, 0) 62%); opacity: 0; }
+.ic-sweep { overflow: hidden; pointer-events: none; }
+.ic-sweep::before {
+  content: ""; position: absolute; top: -10%; bottom: -10%; left: 0; width: 34%;
+  background: linear-gradient(104deg, rgba(255, 236, 196, 0) 0%, rgba(255, 240, 206, 0.34) 45%, rgba(255, 250, 232, 0.55) 50%, rgba(255, 240, 206, 0.34) 55%, rgba(255, 236, 196, 0) 100%);
+  transform: translateX(var(--sx, -120%));
+}
+.ic-kicker, .ic-title, .ic-sub { position: absolute; left: 0; right: 0; text-align: center; transform: translateY(-50%); pointer-events: none; padding-inline: 16px; }
+.ic-kicker { font-family: var(--f-caps); font-weight: 500; font-size: 11px; letter-spacing: 0.28em; color: var(--gold); opacity: 0; }
+.ic-title { display: grid; gap: 6px; justify-items: center; opacity: 0; }
+.ic-brand {
+  font-family: var(--f-caps); font-weight: 500; font-size: clamp(26px, min(7.4vw, 8vh), 64px); line-height: 1.1;
+  letter-spacing: 0.3em; padding-left: 0.3em;
+  background: var(--metal);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold);
+  text-shadow: 0 0 40px rgba(240, 190, 120, 0.25);
+}
+.ic-allgold { font-family: var(--f-num); font-weight: 500; font-size: clamp(15px, min(3.6vw, 3.6vh), 24px); letter-spacing: 0.5em; padding-left: 0.5em; color: var(--gold-hi); font-variant-numeric: lining-nums; }
+.ic-sub { font-family: var(--f-caps); font-weight: 500; font-size: 11px; letter-spacing: 0.28em; color: var(--mist); opacity: 0; }
+.ic-skip {
+  position: absolute; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-gold);
+  background: rgba(11, 3, 6, 0.4); color: var(--gold-hi); font: 400 13px/1 var(--f-body); letter-spacing: 0; cursor: pointer;
+  touch-action: manipulation; transition: transform var(--t1) var(--ease-out), background-color var(--t2) var(--ease-out);
+}
+
+/* Case: silver Muramatsu ships in black with silver hardware; the all-gold in burgundy with a gold mark and gold latches */
+.case-pair { display: grid; gap: 24px; }
+@media (min-width: 560px) { .case-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+.case-pair figure { display: grid; gap: 16px; min-width: 0; }
+.case-pair .shot img { aspect-ratio: 4 / 3; object-fit: cover; }
+.case-pair figcaption { font-size: 14px; line-height: var(--lh-cap); font-weight: 600; color: var(--gold-hi); }
+.duo { display: grid; gap: 16px; }
+@media (min-width: 640px) { .duo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+.duo-note { font-size: 12px; line-height: var(--lh-cap); color: var(--mist); margin-top: -16px; }
+.duo-item { display: grid; gap: 16px; align-content: start; min-width: 0; border: 1px solid var(--hair); border-radius: var(--r-card); overflow: hidden; padding-bottom: 16px; }
+.duo-item.gold { border-color: var(--line-gold); box-shadow: 0 0 40px rgba(150, 26, 56, 0.3); }
+.duo-img { position: relative; }
+.duo-img img { display: block; width: 100%; height: auto; }
+.duo-item figcaption { display: grid; gap: 8px; padding: 0 16px; }
+.duo-item b { font-family: var(--f-head); font-weight: 600; font-size: 15px; color: var(--mist); letter-spacing: var(--ls-sub); line-height: var(--lh-head); }
+.duo-item.gold b { color: var(--gold-hi); }
+.duo-item ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.duo-item li { display: flex; gap: 8px; align-items: center; font-size: 13px; line-height: var(--lh-cap); color: var(--mist); }
+.duo-item.gold li { color: var(--gold-hi); font-weight: 600; }
+.case-real { display: grid; gap: 16px; }
+.sw { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.sw.black { background: #151515; box-shadow: inset 0 0 0 1px #4a4a4a; }
+.sw.burg { background: #5E1528; box-shadow: inset 0 0 0 1px #9A4458; }
+.sw.silv { background: linear-gradient(135deg, #F6F6F6, #A4A4A4 60%, #DADADA); }
+.sw.gold { background: var(--metal); box-shadow: var(--glow); }
+
+@media (prefers-reduced-motion: reduce) {
+  .shine, .shot img, .case-shot .cs-base::after, .sweep, .ring, .badge-ss::after { animation: none !important; }
+  .btn, .lb, .lb img, .cp > span, .shot img, .duo-img img, .case-shot, .rv { transition: none !important; }
+  .play *, .play.journey ol::before { animation: none !important; }
+}
+</style>
+<script>
+/* The fonts are inlined, so they are ready within a frame or two. Hold the page until they are, so text never re-flows after it is shown. */
+(function () {
+  try {
+    var d = document, r = d.documentElement;
+    if (!d.fonts || !d.fonts.load || !window.Promise) return;
+    r.className += " fonts-wait";
+    var done = function () { r.className = r.className.replace(/(^|\s)fonts-wait(?=\s|$)/g, " "); };
+    var faces = ["300 1em MaruBuri", "600 1em MaruBuri", "400 1em Pretendard", "600 1em Pretendard", "500 1em Cinzel", "500 1em 'Cormorant Garamond'"];
+    Promise.all(faces.map(function (f) { return d.fonts.load(f, "\uAC00A1"); })).then(done, done);
+    setTimeout(done, 1500);
+  } catch (e) {}
+})();
+</script>
+
+<div class="wrap">
+
+  <header class="hero">
+    <figure class="hero-shot">
+      <div class="case-shot" id="hero-case" role="button" tabindex="0" data-full="img/case-full-2000.webp" data-full-fallback="img/case-full.jpg" aria-label="케이스에 담긴 플루트 실물 사진 크게 보기">
+        <picture><source type="image/webp" srcset="img/case-lid-800.webp 800w, img/case-lid-1200.webp 1200w, img/case-lid-1600.webp 1600w, img/case-lid-2000.webp 2000w" sizes="(min-width: 1012px) 980px, calc(100vw - 32px)"><img class="cs-lid" src="img/case-lid.jpg" width="1600" height="400" alt=""></picture>
+        <div class="cs-base"><picture><source type="image/webp" srcset="img/case-base-800.webp 800w, img/case-base-1200.webp 1200w, img/case-base-1600.webp 1600w, img/case-base-2000.webp 2000w" sizes="(min-width: 1012px) 980px, calc(100vw - 32px)"><img fetchpriority="high" src="img/case-base.jpg" width="1600" height="400" alt="버건디 벨벳 케이스에 담긴 무라마츠 14K 골드 플루트 실물 사진, 출고 보호 비닐을 씌운 상태"></picture></div>
+        <span class="zoom-hint" aria-hidden="true"></span>
+      </div>
+      <figcaption class="hero-cap"><span><b>실물 사진</b><i class="sep"> · </i>출고 보호 비닐을 씌운 새 악기 그대로</span><span>누르면 크게 보기</span></figcaption>
+    </figure>
+    <div class="hero-text">
+      <p class="invite"><span class="caps">By Invitation<i class="sep"> · </i>Muramatsu 14K + 9K</span></p>
+      <h1><span class="shine">국내 단 한 대.</span><span class="shine">주인도 단 하나.</span></h1>
+      <p class="hero-sub">5년을 기다린 풀옵션 무라마츠 올골드 14K, 9K<br><b>12월 5일에 도착합니다.</b></p>
+      <ul class="chips" aria-label="핵심 사양">
+        <li>14K 관체</li><li>9K 금 키</li><li>전체 수공 각인</li><li>츠바사 립</li>
+      </ul>
+      <div class="cta">
+        <div class="btn-row">
+          <a class="btn btn-gold" href="tel:010-7714-0014">010-7714-0014 바로 전화하기</a>
+          <button class="btn btn-line" type="button" data-copy="phone-close">번호 복사</button>
+        </div>
+        <p class="reassure">대표 직통<i class="sep"> · </i>상담만 받으셔도 됩니다, 예약 의무 없음</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="countdown">
+    <p class="caps">Reservation closes</p>
+    <div class="cd" role="timer" aria-label="예약 마감까지 남은 시간">
+      <div><b data-cd="d">13</b><small>일</small></div>
+      <div><b data-cd="h">00</b><small>시간</small></div>
+      <div><b data-cd="m">00</b><small>분</small></div>
+      <div><b data-cd="s">00</b><small>초</small></div>
+    </div>
+    <p class="cd-note">11월 30일 자정 예약 마감<i class="sep"> · </i>12월 5일 도착</p>
+  </div>
+
+  <div class="facts" role="list">
+    <p class="fact" role="listitem"><span class="num metal">1 / 1</span><span class="lab">국내 단 하나</span></p>
+    <p class="fact" role="listitem"><span class="num metal">12.5</span><span class="lab">셀라플루트 도착</span></p>
+    <p class="fact" role="listitem"><span class="num metal">SS</span><span class="lab">풀옵션 등급</span></p>
+    <p class="fact" role="listitem"><span class="num metal">5</span><span class="lab">년 무상 A/S</span></p>
+  </div>
+
+  <section class="manifesto" aria-labelledby="mani-title">
+    <span class="rule" aria-hidden="true"></span>
+    <h2 id="mani-title"><span class="soft">좋은 플루트는 많습니다.</span><span class="shine">이 플루트는 한 대뿐입니다.</span></h2>
+    <p>같은 풀옵션은 주문해도 최소 5년이 걸리고, 지금은 주문조차 받지 않습니다. 이번을 놓치면 다음을 약속할 수 없습니다.</p>
+    <span class="rule" aria-hidden="true"></span>
+  </section>
+
+  <section aria-labelledby="detail-title">
+    <div class="head">
+      <h2 id="detail-title" class="metal">가까이서 보면 다릅니다</h2>
+      <p class="muted">글로는 잘 전해지지 않아 이 플루트의 실물 사진으로 보여 드립니다. 사진을 누르면 크게 볼 수 있습니다.</p>
+    </div>
+    <div class="details">
+      <div class="detail">
+        <div class="shot"><picture><source type="image/webp" srcset="img/keys-640.webp 640w, img/keys-960.webp 960w, img/keys-1200.webp 1200w" sizes="(min-width: 1012px) 478px, (min-width: 760px) calc(50vw - 28px), calc(100vw - 32px)"><img src="img/keys.jpg" width="1200" height="900" alt="9K 금 키 메커니즘과 각인된 키 컵 실물 사진" loading="lazy" decoding="async"></picture><span class="tag">실물</span><span class="zoom-hint" aria-hidden="true"></span></div>
+        <p class="caps">9K Gold Keys</p>
+        <h3>손가락이 닿는 키까지 금</h3>
+        <p class="muted">골드 플루트도 키는 보통 실버입니다. 이 플루트는 키 메커니즘 전체를 9K 금으로 만들었습니다.</p>
+      </div>
+      <div class="detail">
+        <div class="shot"><picture><source type="image/webp" srcset="img/cups-640.webp 640w, img/cups-1000.webp 1000w" sizes="(min-width: 1012px) 478px, (min-width: 760px) calc(50vw - 28px), calc(100vw - 32px)"><img src="img/cups.jpg" width="1000" height="750" alt="테두리에 꽃과 덩굴 무늬 손각인이 들어간 키 컵 실물 사진" loading="lazy" decoding="async"></picture><span class="tag">실물</span><span class="zoom-hint" aria-hidden="true"></span></div>
+        <p class="caps">Engraved Key Cups</p>
+        <h3>키 컵 테두리마다 손각인</h3>
+        <p class="muted">키 컵 둘레를 장인이 하나씩 손으로 새깁니다. 연주할 때마다 손끝 아래에서 보이는 무늬입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" aria-labelledby="hand-title">
+    <figure>
+      <div class="shot"><picture><source type="image/webp" srcset="img/lip-640.webp 640w, img/lip-960.webp 960w, img/lip-1200.webp 1200w" sizes="(min-width: 1012px) 454px, (min-width: 760px) calc(47.5vw - 38px), calc(100vw - 32px)"><img src="img/lip.jpg" width="1200" height="900" alt="꽃과 덩굴 무늬가 손으로 새겨진 립플레이트 실물 확대 사진" loading="lazy" decoding="async"></picture><span class="tag">실물 사진</span><span class="zoom-hint" aria-hidden="true"></span></div>
+    </figure>
+    <div class="copy">
+      <p class="caps">Hand Engraved</p>
+      <h2 id="hand-title" class="metal">같은 무늬는 두 번 나오지 않습니다</h2>
+      <p>무라마츠의 각인은 기계가 아니라 장인이 손으로 새깁니다. 그래서 같은 도안이라도 선의 깊이와 흐름이 악기마다 다릅니다.</p>
+      <p class="muted">립플레이트 양쪽을 꽃과 덩굴무늬로 채웠습니다. 입술이 닿는 자리이고, 이 플루트에는 츠바사 립이 함께 들어갑니다.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="case-title">
+    <div class="head">
+      <p class="caps">The Gold Case</p>
+      <h2 id="case-title" class="metal">케이스부터 다릅니다</h2>
+      <p class="muted">실버 무라마츠는 검정 케이스에 은장입니다. 올골드는 버건디 가죽에, 브랜드 마크와 여는 잠금쇠까지 금장으로 나옵니다.</p>
+    </div>
+    <div class="duo">
+      <figure class="duo-item">
+        <div class="duo-img"><picture><source type="image/webp" srcset="img/case-silver-640.webp 640w, img/case-silver-1000.webp 1000w" sizes="(min-width: 1012px) 476px, (min-width: 640px) calc(50vw - 30px), calc(100vw - 34px)"><img src="img/case-silver.jpg" width="1000" height="470" alt="검정 가죽에 은장 잠금쇠와 실버 마크가 달린 실버 무라마츠 케이스 일러스트" loading="lazy" decoding="async"></picture></div>
+        <figcaption><b>실버 무라마츠</b><ul><li><i class="sw black"></i>블랙 케이스</li><li><i class="sw silv"></i>은장 잠금쇠</li><li><i class="sw silv"></i>실버 브랜드 마크</li></ul></figcaption>
+      </figure>
+      <figure class="duo-item gold">
+        <div class="duo-img"><picture><source type="image/webp" srcset="img/case-gold-640.webp 640w, img/case-gold-1000.webp 1000w" sizes="(min-width: 1012px) 476px, (min-width: 640px) calc(50vw - 30px), calc(100vw - 34px)"><img src="img/case-gold.jpg" width="1000" height="470" alt="버건디 가죽에 금장 잠금쇠와 골드 마크가 달린 올골드 무라마츠 케이스 일러스트" loading="lazy" decoding="async"></picture></div>
+        <figcaption><b>올골드 무라마츠</b><ul><li><i class="sw burg"></i>버건디 케이스</li><li><i class="sw gold"></i>금장 잠금쇠</li><li><i class="sw gold"></i>골드 브랜드 마크</li></ul></figcaption>
+      </figure>
+    </div>
+    <p class="duo-note">위 케이스 그림은 차이를 보여 드리기 위한 일러스트입니다.</p>
+    <div class="case-real">
+      <p class="caps">Real Photos<i class="sep"> · </i>이 플루트의 케이스</p>
+      <div class="case-pair">
+        <figure><div class="shot"><picture><source type="image/webp" srcset="img/latch-640.webp 640w, img/latch-960.webp 960w, img/latch-1200.webp 1200w" sizes="(min-width: 1012px) 478px, (min-width: 560px) calc(50vw - 28px), calc(100vw - 32px)"><img src="img/latch.jpg" width="1200" height="900" alt="버건디 가죽 케이스의 금장 잠금쇠 실물 사진" loading="lazy" decoding="async"></picture><span class="tag">실물</span><span class="zoom-hint" aria-hidden="true"></span></div><figcaption>금장 잠금쇠</figcaption></figure>
+        <figure><div class="shot"><picture><source type="image/webp" srcset="img/badge-c-640.webp 640w, img/badge-c-1000.webp 1000w" sizes="(min-width: 1012px) 478px, (min-width: 560px) calc(50vw - 28px), calc(100vw - 32px)"><img src="img/badge-c.jpg" width="1000" height="750" alt="버건디 가죽 케이스의 골드 무라마츠 브랜드 마크 실물 사진" loading="lazy" decoding="async"></picture><span class="tag">실물</span><span class="zoom-hint" aria-hidden="true"></span></div><figcaption>골드 브랜드 마크</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey" data-play aria-labelledby="journey-title">
+    <div class="head">
+      <p class="caps">The Five-Year Journey</p>
+      <h2 id="journey-title" class="metal">5년을 건너온 한 대</h2>
+    </div>
+    <ol>
+      <li style="--i:0"><span class="when">2021</span><div class="what"><b>스페셜 오더</b><span>셀라플루트가 무라마츠에 풀옵션 스페셜 오더를 넣습니다.</span></div></li>
+      <li style="--i:1"><span class="when">Tokorozawa</span><div class="what"><b>공방의 손으로</b><span>일본 도코로자와 무라마츠 공방에서 장인이 손으로 만듭니다.</span></div></li>
+      <li style="--i:2"><span class="when">Engraving</span><div class="what"><b>단 하나의 무늬</b><span>키 컵과 립플레이트에 장인이 직접 각인을 새깁니다.</span></div></li>
+      <li style="--i:3"><span class="when">2026.12.05</span><div class="what"><b>셀라플루트 도착</b><span>5년을 기다린 한 대가 송도에 도착합니다.</span></div></li>
+      <li class="last" style="--i:4"><span class="when">Next</span><div class="what"><b>첫 주인에게</b><span>그리고 단 한 분의 손으로 넘어갑니다.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="sound" aria-labelledby="sound-title">
+    <p class="caps" id="sound-title">The Gold of Gold</p>
+    <blockquote>
+      <p>음 하나하나가 선명하게 서고, 반짝이는 소리들이 매끄럽게 이어지며, 그 모두가 풍부한 볼륨으로 공간 가득 울려 퍼집니다.</p>
+    </blockquote>
+    <p class="src">무라마츠가 14K 골드를 소개하는 말입니다. 무라마츠는 14K를 '골드 중의 골드'라고 부릅니다. 이 소리는 12월 5일부터 매장에서 직접 들어 보실 수 있습니다.</p>
+  </section>
+
+  <section class="grade" id="grade" data-play aria-labelledby="grade-title">
+    <div class="grade-head">
+      <div class="badge-ss" aria-label="사양 등급 SS">
+        <span class="caps">Spec Grade</span>
+        <b class="num metal">SS</b>
+        <small>셀라플루트 등급 기준</small>
+      </div>
+      <div class="head">
+        <h2 id="grade-title" class="metal">옵션 하나 빠짐없는<br>풀옵션 중의 풀옵션</h2>
+        <p class="muted">무라마츠 14K 골드에서 고를 수 있는 핵심 옵션을 하나도 빼지 않았습니다. 헤드부터 풋까지, 어디를 봐도 최상위 사양입니다.</p>
+      </div>
+    </div>
+
+    <figure class="map" aria-label="헤드조인트, 바디, 풋조인트로 나눈 플루트 사양 지도">
+      <svg viewBox="0 0 1000 140" aria-hidden="true">
+        <defs>
+          <linearGradient id="g-tube" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F6E2B4"/><stop offset="0.45" stop-color="#D9AE6E"/><stop offset="1" stop-color="#7E5A2E"/>
+          </linearGradient>
+          <linearGradient id="g-cup" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#FCEDC9"/><stop offset="1" stop-color="#B4844A"/>
+          </linearGradient>
+          <linearGradient id="g-sweep" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#FFF6DD" stop-opacity="0"/><stop offset="0.5" stop-color="#FFF6DD" stop-opacity="0.5"/><stop offset="1" stop-color="#FFF6DD" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="c-tube"><rect x="30" y="72" width="940" height="26" rx="13"/></clipPath>
+        </defs>
+        <rect x="12" y="74" width="24" height="22" rx="5" fill="url(#g-tube)"/>
+        <rect x="30" y="72" width="940" height="26" rx="13" fill="url(#g-tube)"/>
+        <g clip-path="url(#c-tube)"><rect class="sweep" x="-260" y="70" width="240" height="30" fill="url(#g-sweep)"/></g>
+        <line x1="250" y1="70" x2="250" y2="100" stroke="#5A3F1E" stroke-width="2"/>
+        <line x1="800" y1="70" x2="800" y2="100" stroke="#5A3F1E" stroke-width="2"/>
+        <rect x="128" y="62" width="88" height="46" rx="23" fill="url(#g-cup)" stroke="#6B4A22"/>
+        <path d="M138 85c8-14 18-14 22-4M206 85c-8-14-18-14-22-4M140 92c10 8 18 6 20-2M204 92c-10 8-18 6-20-2" fill="none" stroke="#7A5426" stroke-width="1.4"/>
+        <rect x="155" y="76" width="34" height="18" rx="9" fill="#120B04"/>
+        <path d="M150 78q-5 7 0 14M194 78q5 7 0 14" fill="none" stroke="#FFF2CF" stroke-width="2" stroke-linecap="round"/>
+        <line x1="300" y1="64" x2="790" y2="64" stroke="#C99A58" stroke-width="3" stroke-linecap="round"/>
+        <line x1="815" y1="64" x2="950" y2="64" stroke="#C99A58" stroke-width="3" stroke-linecap="round"/>
+        <g stroke="#6B4A22" stroke-width="1.2">
+          <circle cx="330" cy="82" r="15" fill="url(#g-cup)"/><circle cx="384" cy="82" r="15" fill="url(#g-cup)"/>
+          <circle cx="438" cy="82" r="15" fill="url(#g-cup)"/><circle cx="492" cy="82" r="15" fill="url(#g-cup)"/>
+          <circle cx="548" cy="104" r="15" fill="url(#g-cup)"/>
+          <circle cx="604" cy="82" r="15" fill="url(#g-cup)"/><circle cx="658" cy="82" r="15" fill="url(#g-cup)"/>
+          <circle cx="712" cy="82" r="15" fill="url(#g-cup)"/><circle cx="766" cy="82" r="15" fill="url(#g-cup)"/>
+          <circle cx="840" cy="82" r="13" fill="url(#g-cup)"/><circle cx="884" cy="82" r="13" fill="url(#g-cup)"/><circle cx="928" cy="82" r="13" fill="url(#g-cup)"/>
+        </g>
+        <g fill="none" stroke="#7A5426" stroke-width="1" stroke-dasharray="2 2.4">
+          <circle cx="330" cy="82" r="11"/><circle cx="384" cy="82" r="11"/><circle cx="438" cy="82" r="11"/><circle cx="492" cy="82" r="11"/>
+          <circle cx="548" cy="104" r="11"/><circle cx="604" cy="82" r="11"/><circle cx="658" cy="82" r="11"/><circle cx="712" cy="82" r="11"/><circle cx="766" cy="82" r="11"/>
+          <circle cx="840" cy="82" r="9"/><circle cx="884" cy="82" r="9"/><circle cx="928" cy="82" r="9"/>
+        </g>
+        <g fill="#120B04">
+          <circle cx="384" cy="82" r="5"/><circle cx="438" cy="82" r="5"/><circle cx="492" cy="82" r="5"/>
+          <circle cx="604" cy="82" r="5"/><circle cx="658" cy="82" r="5"/>
+        </g>
+        <g fill="#D6AC68">
+          <circle cx="172" cy="26" r="7"/><circle cx="548" cy="26" r="7"/><circle cx="884" cy="26" r="7"/>
+        </g>
+        <g fill="none" stroke="#D6AC68" stroke-width="2">
+          <circle class="ring" cx="172" cy="26" r="7"/><circle class="ring r2" cx="548" cy="26" r="7"/><circle class="ring r3" cx="884" cy="26" r="7"/>
+        </g>
+        <g stroke="#9C7840" stroke-width="1.2" stroke-dasharray="3 3">
+          <line x1="172" y1="34" x2="172" y2="60"/><line x1="548" y1="34" x2="548" y2="66"/><line x1="884" y1="34" x2="884" y2="66"/>
+        </g>
+        <g fill="none" stroke="#9C7840" stroke-width="1.2">
+          <path d="M34 122v8h212v-8"/><path d="M256 122v8h538v-8"/><path d="M806 122v8h160v-8"/>
+        </g>
+      </svg>
+      <div class="map-labels" aria-hidden="true">
+        <span style="left:14%">① 헤드조인트</span>
+        <span style="left:52.5%">② 바디</span>
+        <span style="left:88.6%">③ 풋</span>
+      </div>
+    </figure>
+
+    <div class="zones">
+      <div class="zone">
+        <div class="zone-top"><span class="zone-no">1</span><div><p class="caps">Head Joint</p><h3>헤드조인트</h3></div></div>
+        <ul class="checks">
+          <li style="--i:0"><div><b>립플레이트 수공 각인</b><span>입술이 닿는 자리까지 장인의 손각인</span></div></li>
+          <li style="--i:1"><div><b>츠바사 립</b><span>취구 양옆의 작은 날개를 더한 립플레이트</span></div></li>
+        </ul>
+      </div>
+      <div class="zone">
+        <div class="zone-top"><span class="zone-no">2</span><div><p class="caps">Body</p><h3>바디</h3></div></div>
+        <ul class="checks">
+          <li style="--i:2"><div><b>14K 금 관체<i class="mid">·</i>헤드조인트</b><span>무라마츠 골드의 중심 소재</span></div></li>
+          <li style="--i:3"><div><b>9K 금 키 메커니즘</b><span>보통은 실버 키, 이 플루트는 키까지 금</span></div></li>
+          <li style="--i:4"><div><b>키 컵 수공 각인</b><span>모든 키 컵 테두리에 손각인</span></div></li>
+          <li style="--i:5"><div><b>오픈홀(링키)</b><span>손가락으로 음색을 섬세하게 다루는 구조</span></div></li>
+          <li style="--i:6"><div><b>오프셋 G</b><span>왼손 약지가 편한 키 배치</span></div></li>
+          <li style="--i:7"><div><b>E 메커니즘</b><span>고음 E를 안정적으로</span></div></li>
+          <li style="--i:8"><div><b>드로운 톤홀</b><span>관체에서 끌어올려 만든 톤홀</span></div></li>
+        </ul>
+      </div>
+      <div class="zone">
+        <div class="zone-top"><span class="zone-no">3</span><div><p class="caps">Foot Joint</p><h3>풋</h3></div></div>
+        <ul class="checks">
+          <li style="--i:9"><div><b>B풋</b><span>최저음 B까지 넓어진 음역</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gauge">
+      <div class="gauge-top"><span>옵션 충족</span><b>10 / 10<i class="sep"> · </i>FULL OPTION</b></div>
+      <div class="gauge-bar" aria-hidden="true">
+        <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i>
+        <i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i>
+      </div>
+    </div>
+
+    <dl class="spec-mini">
+      <dt>제작</dt><dd>무라마츠, 일본 수제<i class="sep"> · </i>5년 전 셀라플루트 스페셜 오더</dd>
+      <dt>피치</dt><dd>A = 442 Hz</dd>
+      <dt>국내 보유</dt><dd>단 한 대</dd>
+      <dt>도착</dt><dd>2026년 12월 5일, 셀라플루트</dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="owner-title">
+    <div class="head">
+      <p class="caps">For the One Owner</p>
+      <h2 id="owner-title" class="metal">주인이 되는 날</h2>
+      <p class="muted">단 한 대이기에, 받는 순간도 단 한 분을 위해 준비합니다.</p>
+    </div>
+    <div class="owner-grid">
+      <div class="owner-card"><span class="num metal">I</span><h3>프라이빗 인도</h3><p class="muted">도착 후 정한 날, 매장에서 단 한 분을 위한 시간을 비워 둡니다. 직접 불어 보고, 그 자리에서 조정합니다.</p></div>
+      <div class="owner-card"><span class="num metal">II</span><h3>소유 증명서</h3><p class="muted">시리얼 번호, 사양, 인도일을 적은 셀라플루트 소유 증명서를 함께 드립니다.</p></div>
+      <div class="owner-card"><span class="num metal">III</span><h3>5년 무상 관리</h3><p class="muted">인도일부터 5년 동안 매장에서 직접 조정하고 수리합니다.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="fit-title">
+    <div class="head">
+      <h2 id="fit-title" class="metal">이 플루트의 주인이 될 분</h2>
+    </div>
+    <ul class="fit">
+      <li><strong>소리로 증명하는 분</strong><span>실버<i class="mid">·</i>9K<i class="mid">·</i>PTP를 거쳐, 다음 단계의 소리를 찾는 연주자</span></li>
+      <li><strong>기다리지 않는 분</strong><span>주문해도 최소 5년 걸리는 풀옵션을 12월 5일에 받는 분</span></li>
+      <li><strong>무대를 앞둔 분</strong><span>오디션, 입시, 연주회 전에 악기를 몸에 익힐 시간이 필요한 분</span></li>
+      <li><strong>한 대로 끝내는 분</strong><span>소리와 각인 모두 다시 바꿀 필요 없는 평생의 악기를 원하는 분</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="ease-title">
+    <div class="head"><h2 id="ease-title" class="metal">부담은 줄이고, 걱정은 없앴습니다</h2></div>
+    <div class="ease">
+      <div class="panel">
+        <p class="caps">Trade-in</p>
+        <h3>지금 악기가 <span class="nb">다음 악기의 첫걸음이 됩니다</span></h3>
+        <p class="muted">쓰시는 악기를 매장에서 감정하고, 감정가만큼 잔금에서 빼 드립니다. 실제로 더 내시는 금액은 상담 때 정확히 계산해 드립니다.</p>
+      </div>
+      <div class="panel safe">
+        <p class="caps">Deposit Protection</p>
+        <h3>계약금은 이렇게 지킵니다</h3>
+        <ol class="promise">
+          <li><div><b>서면 매매계약서</b><span>반환 조건을 계약서에 그대로 적고 한 부씩 나눠 갖습니다.</span></div></li>
+          <li><div><b>사업자 계좌<i class="sep"> · </i>세금계산서</b><span>셀라플루트 사업자 계좌로만 받고, 세금계산서 또는 현금영수증을 발행합니다.</span></div></li>
+          <li><div><b>인도 못 하면 전액 반환</b><span>약속한 날까지 인도하지 못하면 3영업일 안에 계약금 전액을 돌려 드립니다.</span></div></li>
+          <li><div><b>사양이 다르면 전액 환불</b><span>계약 사양과 다르거나 하자가 있으면 전액 환불합니다.</span></div></li>
+          <li><div><b>불어 보고 잔금</b><span>잔금은 도착 후 매장에서 직접 불어 보고 확인한 다음에 냅니다.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="flow-title">
+    <div class="head"><h2 id="flow-title" class="metal">첫 단계는 5분 통화입니다</h2></div>
+    <ol class="steps">
+      <li><strong>전화 상담</strong><span>대표가 사양, 가격, 보상 매입 조건을 직접 안내합니다.</span></li>
+      <li><strong>매장 미팅</strong><span>송도 센트럴파크가 보이는 28층 매장에서 자료를 보고 쓰시던 악기를 감정합니다.</span></li>
+      <li><strong>예약 계약</strong><span>11월 30일까지 서면 계약과 계약금으로 예약을 확정합니다.</span></li>
+      <li><strong>12월 5일 도착</strong><span>매장에서 직접 불어 보신 뒤 잔금을 내고 받아 가십니다.</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="heritage-title">
+    <div class="head">
+      <h2 id="heritage-title" class="metal">100년의 공방, 23년의 매장</h2>
+    </div>
+    <div class="heritage-grid">
+      <div class="house">
+        <span class="caps">Muramatsu<i class="sep"> · </i>Since</span>
+        <span class="num metal">1923</span>
+        <h3>플루트만 만들어 온 일본 공방</h3>
+        <p class="muted">무라마츠는 1923년부터 100년 넘게 플루트만 만들어 온 일본 회사입니다. 지금도 도코로자와 공방에서 손으로 만듭니다.</p>
+      </div>
+      <div class="house">
+        <span class="caps">Selah Flute<i class="sep"> · </i>Since</span>
+        <span class="num metal">2003</span>
+        <h3>판매하고 직접 수리하는 매장</h3>
+        <p class="muted">셀라플루트는 음악을 전공한 대표가 운영하는 플루트 전문점입니다. 판매한 악기는 매장에서 직접 조정하고 수리합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-title">
+    <div class="head"><h2 id="faq-title" class="metal">자주 묻는 질문</h2></div>
+    <dl class="faq">
+      <div><dt>사진 속 악기가 이 플루트인가요?</dt><dd>네. 12월 5일에 도착할 바로 그 플루트의 실물 사진입니다. 새 악기라 출고 때 씌운 보호 비닐이 그대로 있습니다. 사진은 수평과 색만 보정했습니다.</dd></div>
+      <div><dt>실물을 보지 않고 예약해도 괜찮을까요?</dt><dd>잔금은 도착 후 직접 불어 보고 확인하신 다음에 냅니다. 계약 사양과 다르거나 하자가 있으면 전액 환불합니다.</dd></div>
+      <div><dt>가격은 왜 페이지에 없나요?</dt><dd>지금 쓰시는 악기의 보상 매입에 따라 실제 부담액이 달라집니다. 그래서 대표가 통화로 한 분씩 정확히 안내해 드립니다.</dd></div>
+      <div><dt>상담하면 꼭 예약해야 하나요?</dt><dd>아닙니다. 조건만 들어 보셔도 됩니다.</dd></div>
+      <div><dt>A/S는 어디서 받나요?</dt><dd>셀라플루트 매장에서 직접 합니다. 5년간 무상입니다.</dd></div>
+    </dl>
+  </section>
+
+  <section class="close" aria-labelledby="close-title">
+    <p class="caps">One in Korea<i class="sep"> · </i>One Owner</p>
+    <h2 id="close-title"><span class="shine">국내에 단 하나뿐인 플루트,</span><br><span class="shine">주인도 단 하나입니다.</span></h2>
+    <div class="cd" role="timer" aria-label="예약 마감까지 남은 시간">
+      <div><b data-cd="d">13</b><small>일</small></div>
+      <div><b data-cd="h">00</b><small>시간</small></div>
+      <div><b data-cd="m">00</b><small>분</small></div>
+      <div><b data-cd="s">00</b><small>초</small></div>
+    </div>
+    <p class="phone metal" id="phone-close">010-7714-0014</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="tel:010-7714-0014">010-7714-0014 바로 전화하기</a>
+      <button class="btn btn-line" type="button" data-copy="phone-close">번호 복사</button>
+    </div>
+    <p class="reassure">통화가 어려우시면 이 번호로 "무라마츠 상담"이라고 문자를 남겨 주세요. 대표가 바로 전화드립니다.</p>
+  </section>
+
+  <footer>
+    <p><strong>셀라플루트 Selah Flute</strong><i class="sep"> · </i>2003년부터 플루트 판매<i class="mid">·</i>수리</p>
+    <p>인천 연수구 인천타워대로 301 A동 2833호</p>
+    <p>대표 한동희<i class="sep"> · </i>사업자등록번호 888-09-02060<i class="sep"> · </i>010-7714-0014</p>
+    <p>사진은 이 플루트의 실물이며 수평과 색만 보정했습니다. 사양 지도와 첫 화면의 닫힌 케이스는 일러스트입니다.</p>
+  </footer>
+</div>
+
+<div class="bar" role="region" aria-label="전화 상담">
+  <div class="bar-inner">
+    <div class="bar-text"><small>대표 직통<i class="sep"> · </i>예약 마감 <b class="dday">D-13</b></small><span>010-7714-0014</span></div>
+    <a class="btn btn-gold" href="tel:010-7714-0014">바로 전화</a>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 크게 보기" hidden>
+  <button class="lb-close" type="button" id="lb-close">닫기</button>
+  <img id="lb-img" src="" alt="">
+  <p>실물 사진<i class="sep"> · </i>화면을 누르면 닫힙니다</p>
+</div>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="ic-bg"></div>
+  <canvas class="ic-smoke" id="ic-back"></canvas>
+  <div class="ic-glow" id="ic-glow"></div>
+  <div class="ic-view" id="ic-view"></div>
+  <canvas class="ic-smoke" id="ic-front"></canvas>
+  <p class="ic-kicker" id="ic-kicker">Special Order<i class="sep"> · </i>2021 — 2026</p>
+  <div class="ic-title" id="ic-title"><span class="ic-brand">MURAMATSU</span><span class="ic-allgold">ALL GOLD</span></div>
+  <p class="ic-sub" id="ic-sub">14K Body<i class="sep"> · </i>9K Keys<i class="sep"> · </i>Hand Engraved</p>
+  <button class="ic-skip" type="button" id="ic-skip" tabindex="-1">건너뛰기</button>
+</div>
+
+<script>
+(function () {
+  var PHONE = "010-7714-0014";
+  var DEADLINE = Date.parse("2026-11-30T23:59:59+09:00");
+
+  // Public channels (Instagram, blog) open the page with ?ch=..., where the invitation badge would not be true.
+  try {
+    if (/[?&]ch=/.test(location.search)) {
+      var inv = document.querySelector(".invite .caps");
+      if (inv) inv.textContent = "Muramatsu 14K + 9K · Full Option";
+    }
+  } catch (e) {}
+
+  // Live countdown to the reservation deadline.
+  var cells = document.querySelectorAll("[data-cd]");
+  var ddays = document.querySelectorAll(".dday");
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function tick() {
+    var left = Math.max(0, DEADLINE - Date.now());
+    var s = Math.floor(left / 1000);
+    var v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
+    Array.prototype.forEach.call(cells, function (el) {
+      var k = el.getAttribute("data-cd");
+      el.textContent = k === "d" ? String(v.d) : pad(v[k]);
+    });
+    var label = left <= 0 ? "마감" : v.d > 0 ? "D-" + v.d : "오늘 마감";
+    Array.prototype.forEach.call(ddays, function (el) { el.textContent = label; });
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Copy buttons: clipboard inside the click, else select the number.
+  Array.prototype.forEach.call(document.querySelectorAll("[data-copy]"), function (btn) {
+    var base = btn.textContent, timer = null;
+    btn.textContent = "";
+    var wrap = document.createElement("span"); wrap.className = "cp";
+    var a = document.createElement("span"); a.className = "cp-a"; a.textContent = base;
+    var b = document.createElement("span"); b.className = "cp-b"; b.textContent = "복사됨"; b.setAttribute("aria-hidden", "true");
+    wrap.appendChild(a); wrap.appendChild(b); btn.appendChild(wrap);
+    var live = document.createElement("span"); live.setAttribute("role", "status");
+    live.style.cssText = "position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)";
+    btn.parentNode.appendChild(live);
+    function reset() { btn.classList.remove("done"); a.textContent = base; live.textContent = ""; }
+    function show(text, ms) {
+      clearTimeout(timer);
+      if (text === "복사됨") btn.classList.add("done"); else { btn.classList.remove("done"); a.textContent = text; }
+      live.textContent = text;
+      timer = setTimeout(reset, ms);
+    }
+    function selectNumber() {
+      try {
+        var el = document.getElementById(btn.getAttribute("data-copy"));
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } catch (e) {}
+      show("번호를 길게 눌러 복사하세요", 2600);
+    }
+    btn.addEventListener("click", function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(PHONE).then(function () { show("복사됨", 1600); }, selectNumber);
+      } else {
+        selectNumber();
+      }
+    });
+  });
+
+  // Lightbox: tap any photo to see it large.
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lastFocus = null;
+  var lbTimer = null;
+  function lbReady() { lbImg.classList.add("ready"); }
+  lbImg.addEventListener("load", lbReady);
+  lbImg.addEventListener("error", function () {
+    var fb = lbImg.getAttribute("data-fallback");
+    if (fb) { lbImg.removeAttribute("data-fallback"); lbImg.src = fb; }
+  });
+  function openLb(img) {
+    lastFocus = img;
+    clearTimeout(lbTimer);
+    lbImg.classList.remove("ready");
+    // enlarge with the largest file on offer, not the size the thumbnail happened to load
+    var full = img.getAttribute("data-full"), fb = img.getAttribute("data-full-fallback");
+    var source = img.parentNode && img.parentNode.tagName === "PICTURE" ? img.parentNode.querySelector("source") : null;
+    if (!full && source) {
+      var last = source.getAttribute("srcset").split(",").pop().trim().split(/\s+/)[0];
+      if (last) { full = last; fb = img.getAttribute("src"); }
+    }
+    if (fb) lbImg.setAttribute("data-fallback", fb); else lbImg.removeAttribute("data-fallback");
+    lbImg.alt = img.alt || img.getAttribute("aria-label") || "";
+    lbImg.src = full || img.currentSrc || img.src;
+    lb.hidden = false;
+    void lb.offsetWidth;
+    lb.classList.add("open");
+    if (lbImg.complete && lbImg.naturalWidth) lbReady();
+    document.body.classList.add("lb-open");
+    document.getElementById("lb-close").focus({ preventScroll: true });
+  }
+  function closeLb() {
+    if (!lb.classList.contains("open")) return;
+    lb.classList.remove("open");
+    document.body.classList.remove("lb-open");
+    lbTimer = setTimeout(function () { lb.hidden = true; lbImg.classList.remove("ready"); }, 340);
+    if (lastFocus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+  }
+
+  // Photos fade in once they are decoded.
+  function fadeIn(el, imgs) {
+    var left = imgs.length;
+    function one() { if (--left <= 0) el.classList.add("is-in"); }
+    Array.prototype.forEach.call(imgs, function (im) {
+      if (im.complete) one();
+      else { im.addEventListener("load", one); im.addEventListener("error", one); }
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".shot img, .duo-img img"), function (im) { fadeIn(im, [im]); });
+  var heroShot = document.getElementById("hero-case");
+  if (heroShot) fadeIn(heroShot, heroShot.querySelectorAll("img"));
+  Array.prototype.forEach.call(document.querySelectorAll(".shot img, .case-shot"), function (img) {
+    if (!img.hasAttribute("tabindex")) img.setAttribute("tabindex", "0");
+    img.addEventListener("click", function () { openLb(img); });
+    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLb(img); } });
+  });
+  lb.addEventListener("click", closeLb);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLb(); });
+
+  // Sections rest fully lit; each lights up again once when it comes into view.
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("play"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.25 });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-play]"), function (el) { io.observe(el); });
+
+    // Each block arrives once with a short fade and an 8px rise.
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!calm) {
+      var rv = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add("in"); rv.unobserve(en.target); }
+        });
+      }, { rootMargin: "0px 0px -6% 0px", threshold: 0.01 });
+      var wrapEl = document.querySelector(".wrap"), blocks = [];
+      Array.prototype.forEach.call(wrapEl ? wrapEl.children : [], function (el) {
+        if (el.classList.contains("hero")) return;
+        var whole = el.tagName !== "SECTION" || /(^|\s)(close|manifesto|sound|feature)(\s|$)/.test(el.className);
+        if (whole) blocks.push(el); else Array.prototype.push.apply(blocks, el.children);
+      });
+      blocks.forEach(function (el) { el.classList.add("rv"); rv.observe(el); });
+    }
+  }
+})();
+</script>
+<script>
+/* Intro: the case opens in burgundy smoke and lands exactly on the hero photo. Plays once per session. */
+(function () {
+  var root = document.documentElement;
+  var intro = document.getElementById("intro");
+  if (!intro) return;
+  if (!/(^|\s)intro-on(\s|$)/.test(root.className)) { intro.parentNode.removeChild(intro); return; }
+
+  var pageEls = [document.querySelector(".wrap"), document.querySelector(".bar")];
+  var heroCase = document.getElementById("hero-case");
+  var view = document.getElementById("ic-view");
+  var back = document.getElementById("ic-back"), front = document.getElementById("ic-front");
+  var glow = document.getElementById("ic-glow"), kicker = document.getElementById("ic-kicker");
+  var title = document.getElementById("ic-title"), sub = document.getElementById("ic-sub");
+  var bg = intro.querySelector(".ic-bg"), skip = document.getElementById("ic-skip");
+  var done = false, raf = 0, sceneStart = -1, fading = false;
+
+  function finish() {
+    if (done) return;
+    done = true;
+    cancelAnimationFrame(raf);
+    try { sessionStorage.setItem("selah-intro", "1"); } catch (e) {}
+    root.className = root.className.replace(/(^|\s)intro-on(?=\s|$)/g, " ");
+    pageEls.forEach(function (el) { if (el) { el.style.opacity = ""; el.style.transition = ""; } });
+    // the photo is already in place; only its frame, shadow and zoom mark ease in afterwards
+    if (heroCase) {
+      heroCase.style.visibility = "";
+      heroCase.classList.add("landing");
+      void heroCase.offsetWidth;
+      requestAnimationFrame(function () { heroCase.classList.remove("landing"); });
+    }
+    if (intro.parentNode) intro.parentNode.removeChild(intro);
+  }
+  function fadeOut() {
+    if (done || fading) return;
+    fading = true;
+    var ease = "opacity .64s cubic-bezier(.22,1,.36,1)";
+    intro.style.transition = ease;
+    intro.style.opacity = "0";
+    if (heroCase) heroCase.style.visibility = "visible";
+    pageEls.forEach(function (el) { if (el) { el.style.transition = ease; el.style.opacity = "1"; } });
+    setTimeout(finish, 680);
+  }
+  skip.addEventListener("click", fadeOut);
+  skip.tabIndex = 0;
+
+  try {
+    try { history.scrollRestoration = "manual"; } catch (e) {}
+    window.scrollTo(0, 0);
+
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var portrait = vh > vw * 1.15;
+    var heroW = heroCase ? heroCase.getBoundingClientRect().width : 0;
+    // the case always lies flat and opens upward; on a phone it is already at its hero width, so landing is one straight rise
+    var Lopen = portrait ? (heroW || vw * 0.92) : Math.min(vw * 0.84, vh * 1.05, 1100);
+    var W = Math.ceil(Math.max(Lopen, heroW, 200));
+    var H = W / 4, Dl = W * 0.06, Db = W * 0.1, R = W * 0.012;
+    var s0 = Lopen / W;
+    view.style.perspective = Math.round(Math.max(vw, vh) * 1.5) + "px";
+
+    // ---------- build the case ----------
+    function el(cls, css, parent, tag) {
+      var e = document.createElement(tag || "div");
+      if (cls) e.className = cls;
+      for (var k in css) e.style[k] = css[k];
+      if (parent) parent.appendChild(e);
+      return e;
+    }
+    function px(n) { return n.toFixed(2) + "px"; }
+    // reuse the hero file the browser already chose, so the intro never downloads a second copy
+    function pick(sel, fallback) { var h = heroCase && heroCase.querySelector(sel); return (h && h.currentSrc) || fallback; }
+    var cam = el("ic-cam", {}, view);
+    var box = el("ic-3d", { width: px(W), height: px(H) }, cam);
+    box.style.setProperty("--tile", px(Math.max(18, W * 0.06)));
+
+    // base: real photo floor, leather walls
+    var base = el("ic-3d", { width: px(W), height: px(H) }, box);
+    var basePhoto = el("ic-face", { width: px(W), height: px(H), borderRadius: "0 0 " + px(R) + " " + px(R) }, base);
+    var imgBase = el("", {}, basePhoto, "img"); imgBase.src = pick(".cs-base img", "img/case-base.jpg"); imgBase.alt = "";
+    var sweep = el("ic-sweep", { width: px(W), height: px(H), borderRadius: "0 0 " + px(R) + " " + px(R), transform: "translateZ(1px)" }, base);
+    var baseFront = el("ic-wall-base", { top: px(H), width: px(W), height: px(Db), transformOrigin: "50% 0 0", transform: "rotateX(-90deg)", borderRadius: "0 0 " + px(R) + " " + px(R) }, base);
+    el("ic-wall-base", { width: px(Db), height: px(H), transformOrigin: "0 0 0", transform: "rotateY(90deg)" }, base);
+    el("ic-wall-base", { left: px(W), width: px(Db), height: px(H), transformOrigin: "0 0 0", transform: "rotateY(90deg)" }, base);
+
+    // name plate cut from the real case photo
+    var plateW = W * 0.06;
+    var plate = el("", { left: px(W / 2 - plateW / 2), top: px(Db * 0.16), width: px(plateW), height: px(plateW * 104 / 424), borderRadius: "2px", boxShadow: "0 1px 2px rgba(0,0,0,.6)" }, baseFront, "img");
+    plate.src = "img/plaque.jpg"; plate.alt = "";
+
+    // lid: leather top, real velvet inside, leather walls
+    var lid = el("ic-3d", { width: px(W), height: px(H), transformOrigin: px(W / 2) + " 0 0" }, box);
+    var lidTop = el("ic-face ic-top", { width: px(W), height: px(H), borderRadius: px(R * 1.8), transform: "translateZ(" + px(Dl) + ")", boxShadow: "inset 0 0 " + px(W * 0.022) + " rgba(0,0,0,.5)" }, lid);
+    el("ic-stitch", { left: px(W * 0.028), right: px(W * 0.028), top: px(H * 0.12), bottom: px(H * 0.12), width: "auto", height: "auto", borderWidth: px(Math.max(1, W * 0.0018)), borderRadius: px(R * 1.2) }, lidTop);
+    var lidIn = el("ic-face", { width: px(W), height: px(H), borderRadius: px(R) + " " + px(R) + " 0 0", transform: "translateZ(0.5px) rotateX(180deg)" }, lid);
+    var imgLid = el("", {}, lidIn, "img"); imgLid.src = pick(".cs-lid", "img/case-lid.jpg"); imgLid.alt = "";
+    var lidFront = el("ic-wall-lid", { top: px(H), width: px(W), height: px(Dl), transformOrigin: "50% 0 0", transform: "translateZ(" + px(Dl) + ") rotateX(-90deg)", borderRadius: px(R) + " " + px(R) + " 0 0" }, lid);
+    el("ic-wall-lid", { width: px(Dl), height: px(H), transformOrigin: "0 0 0", transform: "translateZ(" + px(Dl) + ") rotateY(90deg)" }, lid);
+    el("ic-wall-lid", { left: px(W), width: px(Dl), height: px(H), transformOrigin: "0 0 0", transform: "translateZ(" + px(Dl) + ") rotateY(90deg)" }, lid);
+
+    // two latches straddling the seam; the sliders move outward, left to the left and right to the right
+    var Lw = W * 0.105, hU = W * 0.024, hL = W * 0.024;
+    var sliders = [], glints = [];
+    [0.112, 0.888].forEach(function (cx, i) {
+      var x0 = W * cx - Lw / 2;
+      var up = el("ic-gold", { left: px(x0), top: px(Dl - hU), width: px(Lw), height: px(hU), borderRadius: px(hU * 0.35) + " " + px(hU * 0.35) + " 0 0", boxShadow: "0 -1px 0 rgba(255,240,200,.5)" }, lidFront);
+      var lo = el("ic-gold", { left: px(x0), top: "0px", width: px(Lw), height: px(hL), borderRadius: "0 0 " + px(hL * 0.35) + " " + px(hL * 0.35), boxShadow: "0 2px 3px rgba(0,0,0,.5)" }, baseFront);
+      var sr = hU * 0.42;
+      [[0.1, 0.5], [0.9, 0.5]].forEach(function (p) {
+        el("ic-screw", { left: px(Lw * p[0] - sr / 2), top: px(hU * p[1] - sr / 2), width: px(sr), height: px(sr) }, up);
+        el("ic-screw", { left: px(Lw * p[0] - sr / 2), top: px(hL * p[1] - sr / 2), width: px(sr), height: px(sr) }, lo);
+      });
+      var sw = Lw * 0.26, sh = hL * 1.5;
+      var sl = el("ic-slider", { left: px(Lw / 2 - sw / 2), top: px(hL * 0.12), width: px(sw), height: px(sh) }, lo);
+      var gs = hL * 5.5;
+      var gl = el("ic-glint", { left: px(Lw / 2 - gs / 2), top: px(hL * 0.85 - gs / 2), width: px(gs), height: px(gs) }, lo);
+      sliders.push({ el: sl, dir: i === 0 ? -1 : 1 });
+      glints.push(gl);
+    });
+
+    // ---------- smoke ----------
+    function rng(seed) {
+      return function () {
+        seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+    // one wisp of smoke: a soft body plus a few curling tendrils
+    function blob(g, x, y, rad, rgb, al) {
+      var gr = g.createRadialGradient(x, y, 0, x, y, rad);
+      gr.addColorStop(0, "rgba(" + rgb + "," + al.toFixed(3) + ")");
+      gr.addColorStop(1, "rgba(" + rgb + ",0)");
+      g.fillStyle = gr; g.beginPath(); g.arc(x, y, rad, 0, Math.PI * 2); g.fill();
+    }
+    function puff(seed, rgb) {
+      var S = 200, c = document.createElement("canvas"); c.width = c.height = S;
+      var g = c.getContext("2d"), r = rng(seed);
+      g.globalCompositeOperation = "lighter";
+      for (var i = 0; i < 9; i++) blob(g, S / 2 + (r() - 0.5) * S * 0.3, S / 2 + (r() - 0.5) * S * 0.3, S * (0.14 + r() * 0.14), rgb, 0.03 + r() * 0.035);
+      for (var k = 0; k < 4; k++) {
+        var x = S / 2 + (r() - 0.5) * S * 0.24, y = S / 2 + (r() - 0.5) * S * 0.24, ang = r() * 6.283, n = 30;
+        for (var j = 0; j < n; j++) {
+          ang += (r() - 0.5) * 0.8 + 0.12;
+          x += Math.cos(ang) * S * 0.014; y += Math.sin(ang) * S * 0.014;
+          var f = 1 - j / n;
+          blob(g, x, y, S * (0.02 + 0.06 * f) * (0.7 + r() * 0.6), rgb, (0.035 + r() * 0.05) * (0.4 + 0.6 * f));
+        }
+      }
+      g.globalCompositeOperation = "destination-in";
+      var m = g.createRadialGradient(S / 2, S / 2, S * 0.12, S / 2, S / 2, S * 0.5);
+      m.addColorStop(0, "rgba(0,0,0,1)"); m.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = m; g.fillRect(0, 0, S, S);
+      return c;
+    }
+    var tints = ["128,20,46", "92,12,30", "150,34,60", "112,16,38", "176,84,86", "80,10,26"];
+    var sprites = [];
+    for (var i = 0; i < 12; i++) sprites.push(puff(17 + i * 101, tints[i % tints.length]));
+    var RES = 0.5;
+    var bw = back.width = Math.max(2, Math.round(vw * RES)), bh = back.height = Math.max(2, Math.round(vh * RES));
+    front.width = bw; front.height = bh;
+    var bctx = back.getContext("2d"), fctx = front.getContext("2d");
+    var R0 = rng(7);
+    var big = Math.max(bw, bh);
+    function mkPuff(layer) {
+      return {
+        sp: sprites[(R0() * sprites.length) | 0],
+        x: R0() * bw, y: R0() * bh * 1.2,
+        sz: big * (layer ? 0.55 + R0() * 0.5 : 0.5 + R0() * 0.75),
+        rot: R0() * 6.28, vr: (R0() - 0.5) * 0.00018,
+        vx: (R0() - 0.5) * big * 0.000016, vy: -(0.25 + R0() * 0.6) * big * 0.000018,
+        a: layer ? 0.4 + R0() * 0.3 : 0.26 + R0() * 0.32, grow: 0
+      };
+    }
+    var backPuffs = [], frontPuffs = [], burst = [], dust = [];
+    for (i = 0; i < 24; i++) backPuffs.push(mkPuff(0));
+    for (i = 0; i < 9; i++) frontPuffs.push(mkPuff(1));
+    for (i = 0; i < 30; i++) dust.push({ x: R0() * bw, y: R0() * bh, vy: -(0.004 + R0() * 0.012) * bh / 600, r: 0.6 + R0() * 1.3, ph: R0() * 6.28, f: 0.002 + R0() * 0.003 });
+    function drawPuff(ctx, p, alpha) {
+      if (alpha <= 0.002) return;
+      ctx.save();
+      ctx.globalAlpha = Math.min(1, alpha);
+      ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      var z = p.sz * (1 + p.grow);
+      ctx.drawImage(p.sp, -z / 2, -z / 2, z, z);
+      ctx.restore();
+    }
+    function stepPuff(p, dt) {
+      p.x += p.vx * dt; p.y += p.vy * dt; p.rot += p.vr * dt;
+      var m = p.sz * 0.6;
+      if (p.y < -m) { p.y = bh + m; p.x = R0() * bw; }
+      if (p.x < -m) p.x = bw + m; else if (p.x > bw + m) p.x = -m;
+    }
+
+    // ---------- timeline ----------
+    function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+    function seg(t, a, b) { return clamp((t - a) / (b - a)); }
+    function eio(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+    function eo(x) { return 1 - Math.pow(1 - x, 3); }
+    function ein(x) { return x * x * x; }
+    function bezier(x1, y1, x2, y2) {
+      return function (x) {
+        if (x <= 0) return 0; if (x >= 1) return 1;
+        var lo = 0, hi = 1, t = x;
+        for (var i = 0; i < 22; i++) {
+          t = (lo + hi) / 2;
+          var u = 1 - t, cx = 3 * x1 * t * u * u + 3 * x2 * t * t * u + t * t * t;
+          if (cx < x) lo = t; else hi = t;
+        }
+        var v = 1 - t;
+        return 3 * y1 * t * v * v + 3 * y2 * t * t * v + t * t * t;
+      };
+    }
+    var heavy = bezier(0.6, 0, 0.2, 1);   // slow to start, long to settle, never past the end
+    function lerp(a, b, x) { return a + (b - a) * x; }
+    function bell(x) { return Math.sin(Math.PI * clamp(x)); }
+
+    var target = null;
+    var titleY = 0;
+    function layoutText() {
+      var half = Lopen * 0.25;
+      var band = Math.max(40, vh / 2 - half);
+      var off = Math.min(band / 2, Math.max(72, vh * 0.12));
+      titleY = vh / 2 - half - off;
+      kicker.style.top = px(titleY);
+      title.style.top = px(titleY);
+      sub.style.top = px(vh / 2 + half + off);
+    }
+    layoutText();
+
+    var started = performance.now(), last = started, burstDone = false;
+    function frame(now) {
+      if (done) return;
+      var dt = Math.min(50, now - last); last = now;
+      var T = now - started;
+      var s = sceneStart < 0 ? -1 : now - sceneStart;
+
+      // background smoke
+      var bgFade = s < 0 ? 1 : 1 - eo(seg(s, 4900, 5900));
+      bctx.clearRect(0, 0, bw, bh);
+      var smokeIn = eo(seg(T, 0, 1100));
+      for (var i = 0; i < backPuffs.length; i++) { stepPuff(backPuffs[i], dt); drawPuff(bctx, backPuffs[i], backPuffs[i].a * smokeIn); }
+      bctx.globalCompositeOperation = "lighter";
+      for (i = 0; i < dust.length; i++) {
+        var d = dust[i];
+        d.y += d.vy * dt; if (d.y < -4) { d.y = bh + 4; d.x = R0() * bw; }
+        var tw = 0.35 + 0.65 * Math.abs(Math.sin(d.ph + T * d.f));
+        var gr = bctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.r * 3);
+        gr.addColorStop(0, "rgba(255,222,160," + (0.7 * tw * smokeIn).toFixed(3) + ")");
+        gr.addColorStop(1, "rgba(255,200,120,0)");
+        bctx.fillStyle = gr; bctx.fillRect(d.x - d.r * 3, d.y - d.r * 3, d.r * 6, d.r * 6);
+      }
+      bctx.globalCompositeOperation = "source-over";
+
+      // veil in front of the case thins out as it appears; a puff escapes when the lid lifts
+      fctx.clearRect(0, 0, bw, bh);
+      var veil = s < 0 ? smokeIn : lerp(1, 0.12, eo(seg(s, 200, 2000)));
+      for (i = 0; i < frontPuffs.length; i++) { stepPuff(frontPuffs[i], dt); drawPuff(fctx, frontPuffs[i], frontPuffs[i].a * veil); }
+      for (i = 0; i < burst.length; i++) {
+        var b = burst[i], age = s - b.t0, k = seg(age, 0, 2200);
+        b.x += b.vx * dt; b.y += b.vy * dt; b.rot += b.vr * dt; b.grow = 1.6 * eo(k);
+        drawPuff(fctx, b, b.a * bell(Math.min(1, k * 1.6)) * (1 - k));
+      }
+
+      back.style.opacity = bgFade; front.style.opacity = bgFade;
+      bg.style.opacity = bgFade; skip.style.opacity = bgFade;
+
+      if (s >= 0) scene(s);
+      raf = requestAnimationFrame(frame);
+    }
+
+    function scene(s) {
+      // appear
+      view.style.opacity = eo(seg(s, 0, 1300));
+      kicker.style.opacity = eo(seg(s, 150, 900)) * (1 - seg(s, 2250, 2700));
+
+      // latches slide apart, then a glint
+      // latches: a short push that stops dead, like a click
+      var slide = ein(seg(s, 1650, 1830));
+      for (var i = 0; i < sliders.length; i++) sliders[i].el.style.transform = "translateX(" + px(sliders[i].dir * slide * W * 0.046) + ")";
+      var gk = seg(s, 1810, 2250);
+      for (i = 0; i < glints.length; i++) {
+        glints[i].style.opacity = bell(gk).toFixed(3);
+        glints[i].style.transform = "translateX(" + px(sliders[i].dir * slide * W * 0.046) + ") scale(" + (0.4 + gk * 0.9).toFixed(3) + ")";
+      }
+
+      // lid: a small release lift, then it swings fully open
+      var open = heavy(seg(s, 2450, 3900));
+      var theta = eo(seg(s, 2000, 2300)) * 7 + open * 173;
+      lid.style.transform = "rotateX(" + theta.toFixed(2) + "deg)";
+      if (!burstDone && s >= 2450) {
+        burstDone = true;
+        var cx = bw / 2, cy = bh / 2;
+        for (var j = 0; j < 7; j++) {
+          var p = mkPuff(1);
+          p.x = cx + (R0() - 0.5) * bw * 0.6;
+          p.y = cy + (R0() - 0.5) * bh * (portrait ? 0.1 : 0.2);
+          p.sz = big * (0.25 + R0() * 0.25);
+          p.vx = (p.x - cx) * 0.00045; p.vy = -big * (0.00004 + R0() * 0.00005);
+          p.a = 0.6 + R0() * 0.3; p.t0 = s;
+          burst.push(p);
+        }
+      }
+      glow.style.opacity = (lerp(0, 0.28, eo(seg(s, 0, 1500))) + 0.72 * eo(seg(s, 2450, 3700))) * (1 - eo(seg(s, 4900, 5900)));
+
+      // gold light crosses the flute
+      sweep.style.setProperty("--sx", lerp(-120, 320, eio(seg(s, 3700, 4700))).toFixed(1) + "%");
+
+      // camera
+      var settle = heavy(seg(s, 4700, 5900));
+      if (settle > 0 && !target) {
+        var r = heroCase.getBoundingClientRect();
+        target = { x: r.left + r.width / 2, y: r.top + r.height / 2, s: r.width / W };
+      }
+      var tilt = lerp(58, 22, heavy(seg(s, 2350, 3900)));
+      tilt = lerp(tilt, 15, eio(seg(s, 3900, 4700)));
+      tilt *= 1 - settle;
+      var wob = Math.sin(s / 1500) * 2.4 * (1 - settle);
+      var rz = 0, ax = tilt, ay = wob;
+      var sc = s0 * (0.94 + 0.06 * eo(seg(s, 0, 1500))) * (1 + 0.045 * eio(seg(s, 3500, 4700)));
+      var cx2 = vw / 2, cy2 = vh / 2 + vh * 0.03 * (1 - eo(seg(s, 0, 1500)));
+      if (target) { sc = lerp(sc, target.s, settle); cx2 = lerp(cx2, target.x, settle); cy2 = lerp(cy2, target.y, settle); }
+      var pivY = lerp(H / 2, 0, open), pivZ = lerp((Dl - Db) / 2, 0, open);
+      cam.style.transform = "translate3d(" + px(cx2) + "," + px(cy2) + ",0) scale3d(" + sc.toFixed(4) + "," + sc.toFixed(4) + "," + sc.toFixed(4) + ")" +
+        " rotateX(" + ax.toFixed(2) + "deg) rotateY(" + ay.toFixed(2) + "deg) rotateZ(" + rz.toFixed(2) + "deg)" +
+        " translate3d(" + px(-W / 2) + "," + px(-pivY) + "," + px(-pivZ) + ")";
+
+      // words
+      var tIn = eo(seg(s, 3450, 4250)), tOut = seg(s, 4650, 5050);
+      title.style.opacity = (tIn * (1 - tOut)).toFixed(3);
+      title.firstChild.style.letterSpacing = lerp(0.55, 0.3, tIn).toFixed(3) + "em";
+      sub.style.opacity = (eo(seg(s, 3800, 4500)) * (1 - tOut)).toFixed(3);
+
+      // page comes up underneath
+      var pg = eio(seg(s, 4900, 5900));
+      if (pg > 0) pageEls.forEach(function (e) { if (e) e.style.opacity = pg.toFixed(3); });
+      if (s >= 5950) finish();
+    }
+    scene(0);
+    raf = requestAnimationFrame(frame);
+
+    // start the case once its photos are in; give up gracefully if they are slow
+    var need = [imgBase, imgLid], ready = 0;
+    function one() { if (++ready === need.length && sceneStart < 0) sceneStart = Math.max(performance.now(), started + 500); }
+    need.forEach(function (im) {
+      if (im.complete && im.naturalWidth) one();
+      else { im.addEventListener("load", one); im.addEventListener("error", fadeOut); }
+    });
+    setTimeout(function () { if (sceneStart < 0) fadeOut(); }, 4000);
+    setTimeout(function () { if (!done) fadeOut(); }, 11000);
+  } catch (e) {
+    finish();
+  }
+})();
+</script>
+

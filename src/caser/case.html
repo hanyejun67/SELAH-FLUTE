@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1000px;height:470px;overflow:hidden;background:#0E0508}
+.view{position:absolute;inset:0;perspective:2400px;perspective-origin:50% 40%}
+.glow{position:absolute;left:50%;top:50%;width:1000px;height:470px;transform:translate(-50%,-50%);border-radius:50%}
+.shadow{position:absolute;left:50%;top:74%;width:900px;height:110px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.75),rgba(0,0,0,0));filter:blur(6px)}
+.cam{position:absolute;left:0;top:0;transform-style:preserve-3d;transform-origin:0 0}
+.cam div,.cam img{position:absolute;left:0;top:0;display:block}
+.p3{transform-style:preserve-3d}
+.lea{background-repeat:no-repeat,repeat,no-repeat;background-blend-mode:normal,soft-light,normal;background-size:100% 100%,60px auto,100% 100%}
+.screw{border-radius:50%}
+.slider{border-radius:18%}
+.slider::after{content:"";position:absolute;inset:24% 30%;border-radius:50%;border:1px solid rgba(0,0,0,.35)}
+</style></head><body>
+<div class="glow" id="glow"></div><div class="shadow"></div>
+<div class="view"><div class="cam" id="cam"></div></div>
+<script>
+var S = {
+  gold: { top: "radial-gradient(64% 120% at 50% 20%, rgba(255,228,214,.18), rgba(255,228,214,0) 62%)", base: "linear-gradient(180deg,#5A363C 0%,#4A2B30 45%,#331B20 100%)",
+          wallL: "linear-gradient(#4A2B30,#3A2126)", wallB: "linear-gradient(#45282D,#321C21)", stitch: "rgba(20,6,9,.7)",
+          metal: "linear-gradient(180deg,#FFF4CC 0%,#F2CF78 26%,#C2913A 58%,#8E6322 80%,#E9C672 100%)",
+          screw: "radial-gradient(circle at 38% 34%,#FFF6D4 0%,#E4BB62 40%,#8A5E1E 78%,#5E3E12 100%)",
+          plaque: "plaque-gold.jpg", glow: "radial-gradient(closest-side, rgba(170,34,66,.5), rgba(170,34,66,0))" },
+  silver: { top: "radial-gradient(64% 120% at 50% 20%, rgba(220,226,236,.14), rgba(220,226,236,0) 62%)", base: "linear-gradient(180deg,#2C2C31 0%,#1E1E22 45%,#111114 100%)",
+          wallL: "linear-gradient(#202024,#151518)", wallB: "linear-gradient(#1C1C20,#101012)", stitch: "rgba(0,0,0,.75)",
+          metal: "linear-gradient(180deg,#FFFFFF 0%,#E2E5EA 26%,#A7ACB4 58%,#6F747C 80%,#DDE0E5 100%)",
+          screw: "radial-gradient(circle at 38% 34%,#FFFFFF 0%,#C9CDD3 40%,#6A6F76 78%,#45494F 100%)",
+          plaque: "plaque-silver.jpg", glow: "radial-gradient(closest-side, rgba(150,150,162,.26), rgba(150,150,162,0))" }
+}[location.hash.slice(1) || "gold"];
+document.getElementById("glow").style.background = S.glow;
+var W = 900, H = W / 4, Dl = W * 0.06, Db = W * 0.1, R = W * 0.012;
+function px(n) { return n.toFixed(2) + "px"; }
+function el(css, parent, tag) { var e = document.createElement(tag || "div"); for (var k in css) e.style[k] = css[k]; parent.appendChild(e); return e; }
+function leather(extra, base) { return { backgroundImage: extra + ', url("grain.png"), ' + base, backgroundColor: "#222" }; }
+function merge(a, b) { for (var k in b) a[k] = b[k]; return a; }
+var cam = document.getElementById("cam");
+var box = el({ width: px(W), height: px(H) }, cam); box.className = "p3";
+// base walls
+var bf = el(merge({ top: px(H), width: px(W), height: px(Db), transformOrigin: "50% 0 0", transform: "rotateX(-90deg)", borderRadius: "0 0 " + px(R) + " " + px(R) }, leather("linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.1) 14%, rgba(0,0,0,.42))", S.wallB)), box); bf.className = "lea";
+[0, W].forEach(function (x) { var w = el(merge({ left: px(x), width: px(Db), height: px(H), transformOrigin: "0 0 0", transform: "rotateY(90deg)" }, leather("linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35))", S.wallB)), box); w.className = "lea"; });
+// lid
+var lt = el(merge({ width: px(W), height: px(H), borderRadius: px(R * 1.8), transform: "translateZ(" + px(Dl) + ")", boxShadow: "inset 0 0 " + px(W * 0.022) + " rgba(0,0,0,.5)" }, leather(S.top, S.base)), box); lt.className = "lea";
+el({ left: px(W * 0.028), top: px(H * 0.12), width: px(W * 0.944), height: px(H * 0.76), border: "1.6px dashed " + S.stitch, borderRadius: px(R * 1.2), boxShadow: "0 1px 0 rgba(255,230,220,.08)" }, lt);
+var lf = el(merge({ top: px(H), width: px(W), height: px(Dl), transformOrigin: "50% 0 0", transform: "translateZ(" + px(Dl) + ") rotateX(-90deg)", borderRadius: px(R) + " " + px(R) + " 0 0" }, leather("linear-gradient(180deg, rgba(255,232,222,.18), rgba(0,0,0,0) 34%, rgba(0,0,0,.32))", S.wallL)), box); lf.className = "lea";
+[0, W].forEach(function (x) { var w = el(merge({ left: px(x), width: px(Dl), height: px(H), transformOrigin: "0 0 0", transform: "translateZ(" + px(Dl) + ") rotateY(90deg)" }, leather("linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25))", S.wallL)), box); w.className = "lea"; });
+// plaque + latches
+var pw = W * 0.06; el({ left: px(W / 2 - pw / 2), top: px(Db * 0.16), width: px(pw), height: px(pw * 104 / 424), borderRadius: "2px", boxShadow: "0 1px 2px rgba(0,0,0,.6)" }, bf, "img").src = S.plaque;
+var Lw = W * 0.105, h = W * 0.024;
+[0.112, 0.888].forEach(function (c) {
+  var x0 = W * c - Lw / 2;
+  var up = el({ left: px(x0), top: px(Dl - h), width: px(Lw), height: px(h), background: S.metal, borderRadius: px(h * .35) + " " + px(h * .35) + " 0 0" }, lf);
+  var lo = el({ left: px(x0), top: "0px", width: px(Lw), height: px(h), background: S.metal, borderRadius: "0 0 " + px(h * .35) + " " + px(h * .35), boxShadow: "0 2px 3px rgba(0,0,0,.5)" }, bf);
+  var sr = h * 0.42;
+  [0.1, 0.9].forEach(function (f) {
+    [up, lo].forEach(function (pl) { var s = el({ left: px(Lw * f - sr / 2), top: px(h / 2 - sr / 2), width: px(sr), height: px(sr), background: S.screw }, pl); s.className = "screw"; });
+  });
+  var sw = Lw * 0.26; var sl = el({ left: px(Lw / 2 - sw / 2), top: px(h * .12), width: px(sw), height: px(h * 1.5), background: S.metal, boxShadow: "0 2px 4px rgba(0,0,0,.55)" }, lo); sl.className = "slider";
+});
+cam.style.transform = "translate3d(500px,222px,0) rotateX(52deg) rotateZ(-7deg) translate3d(" + px(-W / 2) + "," + px(-H / 2) + "," + px(-(Dl - Db) / 2) + ")";
+</script></body></html>

@@ -1,0 +1,4 @@
+src/fontpkgs/
+src/real/
+dist/
+__pycache__/
